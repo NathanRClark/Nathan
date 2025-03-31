@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Nathan Clark - Classical Tenor</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#1e5631',
+secondary: '#c9a55c'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -4px;
+left: 0;
+background-color: #c9a55c;
+transition: width 0.3s;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.hero-section {
+background-image: url('https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/02887975d84215d5651b750f2bb20d74.jpeg');
+background-size: cover;
+background-position: center;
+}
+</style>
+</head>
+<body class="font-['Lato'] text-gray-800" id="top">
+<div id="resumeModal" class="fixed inset-0 bg-black/80 z-50 hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl mx-4 bg-white rounded-lg shadow-xl">
+<div class="flex justify-between items-center p-6 border-b">
+<h3 class="font-['Playfair_Display'] text-2xl font-bold">Resume</h3>
+<button onclick="closeResumeModal()" class="text-gray-500 hover:text-gray-700">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+<div class="p-6 max-h-[70vh] overflow-y-auto">
+<div class="space-y-8">
+<div>
+<h4 class="text-xl font-bold mb-4">Nathan Clark</h4>
+<div class="mb-6">
+<h5 class="text-lg font-bold mb-2">SUMMARY</h5>
+<p>Gifted singer and dedicated undergraduate student. Dedicated musician willing to collaborate with other professionals or perform in solo roles. Remains focused and poised in fast-paced settings.</p>
+<p class="mt-2">📧 Email: nrossclark@gmail.com</p>
+</div>
+</div>
+<div>
+<h5 class="text-lg font-bold mb-2">KEY SKILLS</h5>
+<div class="grid grid-cols-2 gap-2">
+<div>Collaboration</div>
+<div>Analytical Thinking</div>
+<div>Problem Solving</div>
+<div>Reading Sheet Music</div>
+<div>Leadership</div>
+<div>Confidence</div>
+<div>Music Theory Knowledge</div>
+<div>Taking Cues and Direction</div>
+</div>
+</div>
+<div>
+<h5 class="text-lg font-bold mb-2">EXPERIENCE</h5>
+<div class="space-y-4">
+<div>
+<p class="font-bold">Vocal Performance Major | Baylor University (August 2024 - Present)</p>
+<ul class="list-disc list-inside ml-4 mt-1">
+<li>Studying voice under Dr. Mark Diamond</li>
+<li>Member of Baylor Concert Choir under the direction of Dr. Will McLean</li>
+</ul>
+</div>
+<div>
+<p class="font-bold">Member of Bauer Family HS Voice Studio | Houston Grand Opera (August 2023)</p>
+<ul class="list-disc list-inside ml-4 mt-1">
+<li>Attended monthly masterclasses with professional musicians to develop skills and prepare for college.</li>
+<li>Took private voice lessons twice a month with Mr. Hector Vasquez (University of Houston Voice Faculty).</li>
+</ul>
+</div>
+<div>
+<p class="font-bold">Choral Singer | St. Paul's United Methodist Church (July 2023)</p>
+<ul class="list-disc list-inside ml-4 mt-1">
+<li>Maintained a professional attitude while performing for services and concerts.</li>
+</ul>
+</div>
+<div>
+<p class="font-bold">TMEA All-State Member | Texas Music Educators Association (February 2023, 2024)</p>
+<ul class="list-disc list-inside ml-4 mt-1">
+<li>Performed at the All-State level under the direction of Eugene Rogers and Michael Barrett.</li>
+</ul>
+</div>
+<div>
+<p class="font-bold">Member of Kansas State University Summer Choral Institute (July 2023)</p>
+<ul class="list-disc list-inside ml-4 mt-1">
+<li>Worked with Dr. Joshua Oppenheim and Dr. Julie Yu-Oppenheim.</li>
+</ul>
+</div>
+</div>
+<div>
+<h5 class="text-lg font-bold mb-2">AWARDS</h5>
+<div class="space-y-2">
+<p>Bay Area Chorus Ralph & Richard Parr Music Excellence Winner (2024)</p>
+<p>2nd Place – HGO Bauer Family High School Voice Studio Recital (2024)</p>
+<p>2nd Place – Houston Masterworks Chorus Young Singer Competition (2023)</p>
+</div>
+</div>
+<div>
+<h5 class="text-lg font-bold mb-2">EDUCATION</h5>
+<div class="space-y-4">
+<div>
+<p class="font-bold">Clear Creek High School | League City, TX</p>
+<p class="ml-4">4.0 GPA, Top 4% of Class</p>
+</div>
+<div>
+<p class="font-bold">Baylor University (Current Student)</p>
+<p class="ml-4">Baylor Dean's List (2025)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 border-t bg-gray-50 rounded-b-lg">
+<a href="files/Music Resume.docx.pdf" download="Music_Resume.pdf" class="text-secondary hover:text-secondary/80 font-medium inline-flex items-center">
+<i class="ri-download-line mr-2"></i>
+Download PDF Version
+</a>
+</div>
+</div>
+</div>
+<nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+<div class="container mx-auto px-6 py-4">
+<div class="flex justify-between items-center">
+<a href="#" class="text-2xl font-['Playfair_Display'] font-bold text-primary">Nathan Clark</a>
+<div class="hidden md:flex space-x-8">
+<a href="#top" class="nav-link font-medium">Home</a>
+<a href="#about" class="nav-link font-medium">About</a>
+<a href="#performances" class="nav-link font-medium">Performances</a>
+<a href="#media" class="nav-link font-medium">Media</a>
+<a href="#contact" class="nav-link font-medium">Contact</a>
+</div>
+<button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center">
+<i class="ri-menu-line text-2xl"></i>
+</button>
+</div>
+</div>
+<div id="mobileMenu" class="hidden md:hidden bg-white w-full shadow-md">
+<div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+<a href="#top" class="block py-2 font-medium">Home</a>
+<a href="#about" class="block py-2 font-medium">About</a>
+<a href="#performances" class="block py-2 font-medium">Performances</a>
+<a href="#media" class="block py-2 font-medium">Media</a>
+<a href="#contact" class="block py-2 font-medium">Contact</a>
+</div>
+</div>
+</nav>
+<section class="hero-section min-h-screen relative">
+<div class="absolute inset-0 bg-black/40"></div>
+<div class="container mx-auto px-6 relative z-10 h-screen flex items-center">
+<div class="max-w-3xl text-white">
+<h1 class="font-['Playfair_Display'] text-4xl md:text-6xl font-bold mb-6">Nathan Clark</h1>
+<p class="text-xl md:text-2xl font-light mb-8">Tenor | Classical Vocalist | Performer</p>
+<a href="#contact" class="bg-secondary hover:bg-secondary/90 text-white px-6 md:px-8 py-3 rounded-button inline-block transition-all cursor-pointer">Book Now</a>
+</div>
+</div>
+</section>
+<section id="about" class="py-24 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+<div class="md:col-span-5 order-2 md:order-1">
+<div class="rounded-lg overflow-hidden shadow-xl">
+<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/bc6be96f19bdac1393ee0f3df6fe813f.jpeg"
+alt="Nathan Clark"
+class="w-full h-full object-cover">
+</div>
+</div>
+<div class="md:col-span-7 order-1 md:order-2">
+<h2 class="font-['Playfair_Display'] text-4xl font-bold mb-8">About Me</h2>
+<div class="space-y-6 text-lg leading-relaxed">
+<div class="flex flex-col md:flex-row md:justify-between md:items-center mb-6">
+<p class="flex-1 mb-4 md:mb-0">
+As a tenor and classical vocalist currently studying Vocal Performance at Baylor University,
+I am passionate about bringing classical music to life through powerful performances and meaningful connections with audiences.
+</p>
+<a href="#" onclick="openResumeModal()" class="md:ml-8 bg-secondary hover:bg-secondary/90 text-white px-6 py-2 rounded-button inline-flex items-center justify-center whitespace-nowrap">
+<i class="ri-file-text-line mr-2"></i>
+View Resume
+</a>
+</div>
+<p>
+At Baylor, I am proud to be a member of the Baylor Concert Choir, where I've had the privilege
+of collaborating with exceptional musicians and performing in prestigious venues. Our appearances
+at NACDA and CBNDA, featuring large-scale symphonic works, have been particularly memorable highlights
+of my journey.
+</p>
+<p>
+My dedication to music extends beyond the concert hall to St. Peter's Catholic Student Center,
+where I serve as both a cantor and tenor section leader in the music ministry. This role allows
+me to combine my love for music with my spiritual commitment.
+</p>
+<p>
+One of my most cherished experiences was touring with the St. Paul Choral Scholars across Austria, where I had the extraordinary opportunity to perform in historic cathedrals, including the magnificent Salzburg Cathedral and St. Stephen's Cathedral in Vienna. This transformative journey deepened my appreciation for sacred music and its rich cultural heritage.
+</p>
+<p>
+When I'm not performing or practicing, you'll find me pursuing my passion for physical fitness,
+whether that's at the gym, engaging in sports, or challenging myself to reach new personal bests.
+I believe in the strong connection between physical wellness and vocal performance.
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="performances" class="py-24">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row md:justify-between md:items-center mb-12">
+<h2 class="font-['Playfair_Display'] text-4xl font-bold mb-4 md:mb-0">Performances</h2>
+<div class="flex space-x-4">
+<button onclick="switchPerformanceType('upcoming')" class="text-lg font-medium px-4 py-2 rounded-full transition-all" id="upcomingBtn">Upcoming</button>
+<button onclick="switchPerformanceType('previous')" class="text-lg font-medium px-4 py-2 rounded-full transition-all" id="previousBtn">Previous</button>
+</div>
+</div>
+<div class="relative">
+<div class="overflow-hidden" id="performanceSlider">
+<div class="flex transition-transform duration-300 ease-in-out" id="performanceWrapper">
+<!-- Upcoming Performances -->
+<div class="upcoming-performances w-full flex-shrink-0">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/13b71d7dba9f0d0dfbde09cb0ad1e4bf.jpeg"
+alt="Earth Symphony at National ACDA"
+class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">Earth Symphony at National ACDA</h3>
+<p class="text-gray-600 mb-4">March 22, 2025 | 8:00 PM</p>
+<p class="mb-4">The Meyerson Concert Hall</p>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/7b6ef1a63ad886492d1ede8e22b13168.jpeg"
+alt="Baylor Choirs and Band Concert"
+class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">Baylor Choirs and Band Concert</h3>
+<p class="text-gray-600 mb-4">March 25, 2025 | 7:30 PM</p>
+<p class="mb-4">Jones Concert Hall</p>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/4da89f4d41e0d5c9c5ca4c2b4d834327.jpeg"
+alt="Good Friday Mass"
+class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">Good Friday Mass</h3>
+<p class="text-gray-600 mb-4">April 18, 2025 | 3:00 PM</p>
+<p class="mb-4">St. Peter's Catholic Student Center</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Previous Performances -->
+<div class="previous-performances w-full flex-shrink-0">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/26607961b38f84f0878643ea24ae2a33.jpeg"
+alt="Armonía Christmas Concert"
+class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">Armonía Christmas Concert</h3>
+<p class="text-gray-600 mb-4">December 21, 2024</p>
+<p class="mb-4">St. Paul Houston Methodist Church</p>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/cc22d16473b6b8b38904d6a6bcf6ba27.jpeg"
+alt="A Baylor Christmas"
+class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">A Baylor Christmas</h3>
+<p class="text-gray-600 mb-4">December 6, 2024</p>
+<p class="mb-4">Waco Hall</p>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/e4c2a131d5f9facc9246b45e8dbf26e9.jpeg"
+alt="St. Paul Choral Scholars Concert"
+class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">St. Paul Choral Scholars Concert</h3>
+<p class="text-gray-600 mb-4">July 16, 2024</p>
+<p class="mb-4">St. Stephen's Cathedral in Vienna</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button onclick="slide('prev')" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all">
+<i class="ri-arrow-left-s-line text-xl md:text-2xl"></i>
+</button>
+<button onclick="slide('next')" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all">
+<i class="ri-arrow-right-s-line text-xl md:text-2xl"></i>
+</button>
+</div>
+</div>
+</section>
+<script>
+let currentType = 'upcoming';
+const upcomingBtn = document.getElementById('upcomingBtn');
+const previousBtn = document.getElementById('previousBtn');
+const wrapper = document.getElementById('performanceWrapper');
+function switchPerformanceType(type) {
+currentType = type;
+if (type === 'upcoming') {
+wrapper.style.transform = 'translateX(0)';
+upcomingBtn.classList.add('text-secondary', 'bg-secondary/10');
+previousBtn.classList.remove('text-secondary', 'bg-secondary/10');
+} else {
+wrapper.style.transform = 'translateX(-100%)';
+previousBtn.classList.add('text-secondary', 'bg-secondary/10');
+upcomingBtn.classList.remove('text-secondary', 'bg-secondary/10');
+}
+}
+function slide(direction) {
+if (direction === 'next' && currentType === 'upcoming') {
+switchPerformanceType('previous');
+} else if (direction === 'prev' && currentType === 'previous') {
+switchPerformanceType('upcoming');
+}
+}
+// Initialize the first view
+switchPerformanceType('upcoming');
+</script>
+<section id="media" class="py-24 bg-gray-50">
+<div class="container mx-auto px-6">
+<h2 class="font-['Playfair_Display'] text-4xl font-bold mb-12 text-center">Media Gallery</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/kuN4cj0SwRM')">
+<div class="relative">
+<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/25dbc016cad206d2b60e03f1f86823ba.jpeg"
+alt="Performance"
+class="w-full h-64 object-cover">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<i class="ri-play-circle-line text-white text-5xl"></i>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">The Boatmen's Dance by Copland</h3>
+<p class="text-gray-600">Solo Performance 2025</p>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/bsxaqCL4txc')">
+<div class="relative">
+<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/70f51b0b0bb14b1083220b7660a90b46.png"
+alt="Rehearsal"
+class="w-full h-64 object-cover object-top">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<i class="ri-play-circle-line text-white text-5xl"></i>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">Keep the Whole World Singing</h3>
+<p class="text-gray-600">Quartet Performance (All Parts)</p>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/x6fc3F4qZE4')">
+<div class="relative">
+<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/d1e42ba73acc630142cb9b2b16aef2da.png"
+alt="Choir Performance"
+class="w-full h-64 object-cover">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<i class="ri-play-circle-line text-white text-5xl"></i>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">I Don't Want to Set the World on Fire</h3>
+<p class="text-gray-600">Cover of The Ink Spots</p>
+</div>
+</div>
+</div>
+</div>
+<div id="videoModal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center">
+<div class="relative w-full max-w-4xl mx-4 mt-16 md:mt-0">
+<button onclick="closeVideoModal()" class="absolute -top-10 right-0 text-white hover:text-gray-300">
+<i class="ri-close-line text-3xl"></i>
+</button>
+<div class="relative pt-[56.25%]">
+<iframe id="videoFrame" class="absolute inset-0 w-full h-full rounded-lg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</section>
+<section id="contact" class="py-24">
+<div class="container mx-auto px-6">
+<div class="max-w-2xl mx-auto text-center">
+<h2 class="font-['Playfair_Display'] text-4xl font-bold mb-8">Get in Touch</h2>
+<p class="text-lg mb-12">For booking inquiries, collaborations, or general questions, please don't hesitate to reach out.</p>
+<form class="space-y-6" id="contactForm">
+<input type="text" name="name" placeholder="Name" required class="w-full px-4 py-3 rounded border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary">
+<input type="email" name="email" placeholder="Email" required class="w-full px-4 py-3 rounded border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary">
+<textarea name="message" placeholder="Message" rows="5" required class="w-full px-4 py-3 rounded border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary"></textarea>
+<button type="submit" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-button transition-all cursor-pointer">Send Message</button>
+</form>
+<div id="formStatus" class="mt-4 text-center hidden"></div>
+</div>
+</div>
+</section>
+<footer class="bg-primary text-white py-16">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="text-center md:text-left">
+<h3 class="font-['Playfair_Display'] text-xl font-bold mb-6">Nathan Clark</h3>
+<p class="text-white/80">Classical Tenor based in Waco, Texas</p>
+</div>
+<div class="text-center md:text-left">
+<h3 class="font-['Playfair_Display'] text-xl font-bold mb-6">Connect</h3>
+<div class="flex justify-center md:justify-start space-x-4">
+<a href="https://youtube.com/@nathanclarktenor?feature=shared" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white/10 transition-all">
+<i class="ri-youtube-line"></i>
+</a>
+<a href="https://www.instagram.com/nathan.r.clark?igsh=NmtnaXA3M3VzeW9i&utm_source=qr" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white/10 transition-all">
+<i class="ri-instagram-line"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-white/10 text-center">
+<p>&copy; 2025 Nathan Clark. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+document.querySelector(this.getAttribute('href')).scrollIntoView({
+behavior: 'smooth'
+});
+// Close mobile menu if it's open
+const mobileMenu = document.getElementById('mobileMenu');
+if (mobileMenu.classList.contains('block')) {
+mobileMenu.classList.remove('block');
+mobileMenu.classList.add('hidden');
+}
+});
+});
+// Mobile menu toggle
+document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+const mobileMenu = document.getElementById('mobileMenu');
+if (mobileMenu.classList.contains('hidden')) {
+mobileMenu.classList.remove('hidden');
+mobileMenu.classList.add('block');
+} else {
+mobileMenu.classList.remove('block');
+mobileMenu.classList.add('hidden');
+}
+});
+const form = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+form.addEventListener('submit', async (e) => {
+e.preventDefault();
+// Show loading state
+formStatus.innerHTML = `
+<div class="flex items-center justify-center">
+<div class="animate-spin rounded-full h-5 w-5 border-b-2 border-primary mr-2"></div>
+<span>Sending message...</span>
+</div>
+`;
+formStatus.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700');
+formStatus.classList.add('block', 'bg-blue-100', 'text-blue-700', 'border', 'border-blue-400', 'px-4', 'py-3', 'rounded');
+const formData = new FormData(form);
+const data = Object.fromEntries(formData);
+try {
+// Using EmailJS service to send emails directly from client-side
+// You need to sign up at emailjs.com and replace these with your actual service details
+const templateParams = {
+from_name: data.name,
+from_email: data.email,
+message: data.message,
+to_email: 'nrossclark@gmail.com'
+};
+// Load EmailJS dynamically
+if (!window.emailjs) {
+const script = document.createElement('script');
+script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+script.async = true;
+document.head.appendChild(script);
+await new Promise(resolve => {
+script.onload = resolve;
+});
+// Initialize EmailJS with your user ID
+window.emailjs.init('fDgvdA3LWH9pU-uQm');
+}
+// Send the email using EmailJS
+await window.emailjs.send('service_bwhrn6k', 'template_contact', templateParams);
+// Show success message
+formStatus.innerHTML = `
+<div class="flex items-center">
+<i class="ri-check-line mr-2"></i>
+<span>Thank you! Your message has been sent to nrossclark@gmail.com</span>
+</div>
+`;
+formStatus.classList.remove('bg-blue-100', 'text-blue-700', 'bg-red-100', 'text-red-700');
+formStatus.classList.add('bg-green-100', 'text-green-700', 'border-green-400');
+// Create a floating notification
+const successMessage = document.createElement('div');
+successMessage.className = 'fixed top-4 right-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded shadow-md z-50';
+successMessage.innerHTML = `
+<div class="flex items-center">
+<i class="ri-check-line mr-2"></i>
+<span>Thank you! Your message has been sent to nrossclark@gmail.com</span>
+</div>
+`;
+document.body.appendChild(successMessage);
+// Remove the floating notification after 5 seconds
+setTimeout(() => {
+successMessage.remove();
+}, 5000);
+// Reset the form
+form.reset();
+// Hide the status message after 5 seconds
+setTimeout(() => {
+formStatus.classList.add('hidden');
+}, 5000);
+} catch (error) {
+console.error('Error sending email:', error);
+// Show error message
+formStatus.innerHTML = `
+<div class="flex items-center">
+<i class="ri-error-warning-line mr-2"></i>
+<span>There was an error sending your message. Please try again or contact directly at nrossclark@gmail.com</span>
+</div>
+`;
+formStatus.classList.remove('bg-blue-100', 'text-blue-700', 'bg-green-100', 'text-green-700');
+formStatus.classList.add('bg-red-100', 'text-red-700', 'border-red-400');
+}
+});
+function openVideoModal(videoUrl) {
+const modal = document.getElementById('videoModal');
+const videoFrame = document.getElementById('videoFrame');
+videoFrame.src = videoUrl;
+modal.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+}
+function closeVideoModal() {
+const modal = document.getElementById('videoModal');
+const videoFrame = document.getElementById('videoFrame');
+videoFrame.src = '';
+modal.classList.add('hidden');
+document.body.style.overflow = '';
+}
+function openResumeModal() {
+const modal = document.getElementById('resumeModal');
+modal.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+}
+function closeResumeModal() {
+const modal = document.getElementById('resumeModal');
+modal.classList.add('hidden');
+document.body.style.overflow = '';
+}
+document.getElementById('resumeModal').addEventListener('click', (e) => {
+if (e.target === document.getElementById('resumeModal')) {
+closeResumeModal();
+}
+});
+let currentMediaIndex = 0;
+const mediaItems = document.querySelectorAll('#mediaWrapper > div');
+const mediaItemWidth = mediaItems[0].offsetWidth + 32; // Including margin
+function slideMedia(direction) {
+const wrapper = document.getElementById('mediaWrapper');
+const maxIndex = mediaItems.length - 3;
+if (direction === 'next' && currentMediaIndex < maxIndex) {
+currentMediaIndex++;
+} else if (direction === 'prev' && currentMediaIndex > 0) {
+currentMediaIndex--;
+}
+wrapper.style.transform = `translateX(-${currentMediaIndex * mediaItemWidth}px)`;
+}
+document.getElementById('videoModal').addEventListener('click', (e) => {
+if (e.target === document.getElementById('videoModal')) {
+closeVideoModal();
+}
+});
+</script>
+</body>
+</html>
