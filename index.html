@@ -508,7 +508,8 @@ const templateParams = {
 from_name: data.name,
 from_email: data.email,
 message: data.message,
-to_email: 'nrossclark@gmail.com'
+to_name: 'Nathan Clark',
+reply_to: data.email
 };
 // Load EmailJS dynamically
 if (!window.emailjs) {
@@ -528,7 +529,7 @@ await window.emailjs.send('service_bwhrn6k', 'template_5u5fj4e', templateParams)
 formStatus.innerHTML = `
 <div class="flex items-center">
 <i class="ri-check-line mr-2"></i>
-<span>Thank you! Your message has been sent to nrossclark@gmail.com</span>
+<span>Thank you! Your message has been sent successfully.</span>
 </div>
 `;
 formStatus.classList.remove('bg-blue-100', 'text-blue-700', 'bg-red-100', 'text-red-700');
@@ -539,7 +540,7 @@ successMessage.className = 'fixed top-4 right-4 bg-green-100 border border-green
 successMessage.innerHTML = `
 <div class="flex items-center">
 <i class="ri-check-line mr-2"></i>
-<span>Thank you! Your message has been sent to nrossclark@gmail.com</span>
+<span>Thank you! Your message has been sent successfully.</span>
 </div>
 `;
 document.body.appendChild(successMessage);
@@ -559,7 +560,7 @@ console.error('Error sending email:', error);
 formStatus.innerHTML = `
 <div class="flex items-center">
 <i class="ri-error-warning-line mr-2"></i>
-<span>There was an error sending your message. Please try again or contact directly at nrossclark@gmail.com</span>
+<span>There was an error sending your message. Please try again later.</span>
 </div>
 `;
 formStatus.classList.remove('bg-blue-100', 'text-blue-700', 'bg-green-100', 'text-green-700');
