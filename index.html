@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Nathan Clark - Classical Tenor</title>
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -150,12 +151,6 @@ background-position: center;
 </div>
 </div>
 </div>
-</div>
-<div class="p-6 border-t bg-gray-50 rounded-b-lg">
-<a href="files/Music Resume.docx.pdf" download="Music_Resume.pdf" class="text-secondary hover:text-secondary/80 font-medium inline-flex items-center">
-<i class="ri-download-line mr-2"></i>
-Download PDF Version
-</a>
 </div>
 </div>
 </div>
@@ -461,6 +456,10 @@ class="w-full h-64 object-cover">
 </div>
 </footer>
 <script>
+// Initialize EmailJS
+(function() {
+  emailjs.init('fDgvdA3LWH9pU-uQm');
+})();
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 anchor.addEventListener('click', function (e) {
 e.preventDefault();
@@ -503,7 +502,6 @@ const formData = new FormData(form);
 const data = Object.fromEntries(formData);
 try {
 // Using EmailJS service to send emails directly from client-side
-// You need to sign up at emailjs.com and replace these with your actual service details
 const templateParams = {
 from_name: data.name,
 from_email: data.email,
@@ -511,22 +509,8 @@ message: data.message,
 to_name: 'Nathan Clark',
 reply_to: data.email
 };
-// Load EmailJS dynamically
-if (!window.emailjs) {
-  const script = document.createElement("script");
-  script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js";
-  script.async = true;
-  document.head.appendChild(script);
-
-  await new Promise((resolve) => {
-    script.onload = () => {
-      window.emailjs.init("fDgvdA3LWH9pU-uQm");
-      resolve();
-    };
-  });
-}
-// Send the email using EmailJS
-await window.emailjs.send('service_bwhrn6k', 'template_5u5fj4e', templateParams);
+// Send the email using EmailJS with your service ID, template ID and user ID
+await emailjs.send('service_bwhrn6k', 'template_5u5fj4e', templateParams);
 // Show success message
 formStatus.innerHTML = `
 <div class="flex items-center">
