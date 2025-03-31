@@ -458,14 +458,19 @@ class="w-full h-64 object-cover">
 <script>
 // Initialize EmailJS
 (function() {
-  emailjs.init('fDgvdA3LWH9pU-uQm');
+emailjs.init('fDgvdA3LWH9pU-uQm');
 })();
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 anchor.addEventListener('click', function (e) {
 e.preventDefault();
-document.querySelector(this.getAttribute('href')).scrollIntoView({
-behavior: 'smooth'
-});
+const targetId = this.getAttribute('href');
+if (targetId === '#') return; // Skip empty anchors
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+  targetElement.scrollIntoView({
+    behavior: 'smooth'
+  });
+}
 // Close mobile menu if it's open
 const mobileMenu = document.getElementById('mobileMenu');
 if (mobileMenu.classList.contains('block')) {
