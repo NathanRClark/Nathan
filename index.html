@@ -513,15 +513,17 @@ reply_to: data.email
 };
 // Load EmailJS dynamically
 if (!window.emailjs) {
-const script = document.createElement('script');
-script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
-script.async = true;
-document.head.appendChild(script);
-await new Promise(resolve => {
-script.onload = resolve;
-});
-// Initialize EmailJS with your user ID
-window.emailjs.init('fDgvdA3LWH9pU-uQm');
+  const script = document.createElement("script");
+  script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js";
+  script.async = true;
+  document.head.appendChild(script);
+
+  await new Promise((resolve) => {
+    script.onload = () => {
+      window.emailjs.init("fDgvdA3LWH9pU-uQm");
+      resolve();
+    };
+  });
 }
 // Send the email using EmailJS
 await window.emailjs.send('service_bwhrn6k', 'template_5u5fj4e', templateParams);
