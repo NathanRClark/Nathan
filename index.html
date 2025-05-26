@@ -461,9 +461,7 @@ class="w-full h-64 object-cover">
 </div>
 </footer>
 <script>
-(function() {
 emailjs.init("fDgvdA3LWH9pU-uQm");
-})();
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 anchor.addEventListener('click', function (e) {
 e.preventDefault();
@@ -496,9 +494,8 @@ mobileMenu.classList.add('hidden');
 });
 const form = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
-form.addEventListener('submit', async function(e) {
+form.addEventListener('submit', function(e) {
 e.preventDefault();
-// Show loading state
 formStatus.innerHTML = `
 <div class="flex items-center justify-center">
 <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-primary mr-2"></div>
@@ -507,17 +504,14 @@ formStatus.innerHTML = `
 `;
 formStatus.classList.remove('hidden');
 formStatus.classList.add('block', 'bg-blue-100', 'text-blue-700', 'border', 'border-blue-400', 'px-4', 'py-3', 'rounded');
-// Get form data
 const templateParams = {
-from_name: form.name.value,
-from_email: form.email.value,
-message: form.message.value,
-to_name: 'Nathan Clark',
-reply_to: form.email.value
+from_name: form.elements.name.value,
+from_email: form.elements.email.value,
+message: form.elements.message.value,
+to_name: 'Nathan Clark'
 };
-try {
-// Send the email using EmailJS
-await emailjs.send("service_bwhrn6k", "template_5u5fj4e", templateParams);
+emailjs.send("service_bwhrn6k", "template_5u5fj4e", templateParams)
+.then(function(response) {
 // Show success message
 formStatus.innerHTML = `
 <div class="flex items-center">
