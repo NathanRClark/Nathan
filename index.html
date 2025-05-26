@@ -463,7 +463,7 @@ class="w-full h-64 object-cover">
 <script>
 // Initialize EmailJS
 (function() {
-emailjs.init("fDgvdA3LWH9pU-uQm", { publicKey: "fDgvdA3LWH9pU-uQm" });
+emailjs.init("fDgvdA3LWH9pU-uQm");
 })();
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 anchor.addEventListener('click', function (e) {
@@ -518,10 +518,7 @@ reply_to: form.email.value
 };
 try {
 // Send the email using EmailJS
-const response = await emailjs.send("service_bwhrn6k", "template_5u5fj4e", templateParams, "fDgvdA3LWH9pU-uQm");
-if (response.status !== 200) {
-  throw new Error('Failed to send email');
-}
+await emailjs.send("service_bwhrn6k", "template_5u5fj4e", templateParams);
 // Show success message
 formStatus.innerHTML = `
 <div class="flex items-center">
