@@ -6,6 +6,11 @@
 <title>Nathan Clark - Classical Tenor</title>
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("fDgvdA3LWH9pU-uQm");
+  })();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -467,9 +472,9 @@ const targetId = this.getAttribute('href');
 if (targetId === '#') return; // Skip empty anchors
 const targetElement = document.querySelector(targetId);
 if (targetElement) {
-  targetElement.scrollIntoView({
-    behavior: 'smooth'
-  });
+targetElement.scrollIntoView({
+behavior: 'smooth'
+});
 }
 // Close mobile menu if it's open
 const mobileMenu = document.getElementById('mobileMenu');
@@ -492,19 +497,25 @@ mobileMenu.classList.add('hidden');
 });
 const form = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
-form.addEventListener('submit', async (e) => {
-e.preventDefault();
-// Show loading state
-formStatus.innerHTML = `
-<div class="flex items-center justify-center">
-<div class="animate-spin rounded-full h-5 w-5 border-b-2 border-primary mr-2"></div>
-<span>Sending message...</span>
-</div>
-`;
-formStatus.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700');
-formStatus.classList.add('block', 'bg-blue-100', 'text-blue-700', 'border', 'border-blue-400', 'px-4', 'py-3', 'rounded');
-const formData = new FormData(form);
-const data = Object.fromEntries(formData);
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Show loading state
+    formStatus.innerHTML = `
+        <div class="flex items-center justify-center">
+            <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-primary mr-2"></div>
+            <span>Sending message...</span>
+        </div>
+    `;
+    formStatus.classList.remove('hidden');
+    formStatus.classList.add('block', 'bg-blue-100', 'text-blue-700', 'border', 'border-blue-400', 'px-4', 'py-3', 'rounded');
+    // Get form data
+    const templateParams = {
+        from_name: form.name.value,
+        from_email: form.email.value,
+        message: form.message.value,
+        to_name: 'Nathan Clark'
+    };
 try {
 // Using EmailJS service to send emails directly from client-side
 const templateParams = {
