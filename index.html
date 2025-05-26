@@ -7,9 +7,9 @@
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-  (function() {
-    emailjs.init("fDgvdA3LWH9pU-uQm");
-  })();
+(function() {
+emailjs.init("fDgvdA3LWH9pU-uQm");
+})();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -463,7 +463,7 @@ class="w-full h-64 object-cover">
 <script>
 // Initialize EmailJS
 (function() {
-emailjs.init('fDgvdA3LWH9pU-uQm');
+emailjs.init("fDgvdA3LWH9pU-uQm", { publicKey: "fDgvdA3LWH9pU-uQm" });
 })();
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 anchor.addEventListener('click', function (e) {
@@ -497,36 +497,31 @@ mobileMenu.classList.add('hidden');
 });
 const form = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Show loading state
-    formStatus.innerHTML = `
-        <div class="flex items-center justify-center">
-            <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-primary mr-2"></div>
-            <span>Sending message...</span>
-        </div>
-    `;
-    formStatus.classList.remove('hidden');
-    formStatus.classList.add('block', 'bg-blue-100', 'text-blue-700', 'border', 'border-blue-400', 'px-4', 'py-3', 'rounded');
-    // Get form data
-    const templateParams = {
-        from_name: form.name.value,
-        from_email: form.email.value,
-        message: form.message.value,
-        to_name: 'Nathan Clark'
-    };
-try {
-// Using EmailJS service to send emails directly from client-side
+form.addEventListener('submit', async function(e) {
+e.preventDefault();
+// Show loading state
+formStatus.innerHTML = `
+<div class="flex items-center justify-center">
+<div class="animate-spin rounded-full h-5 w-5 border-b-2 border-primary mr-2"></div>
+<span>Sending message...</span>
+</div>
+`;
+formStatus.classList.remove('hidden');
+formStatus.classList.add('block', 'bg-blue-100', 'text-blue-700', 'border', 'border-blue-400', 'px-4', 'py-3', 'rounded');
+// Get form data
 const templateParams = {
-from_name: data.name,
-from_email: data.email,
-message: data.message,
+from_name: form.name.value,
+from_email: form.email.value,
+message: form.message.value,
 to_name: 'Nathan Clark',
-reply_to: data.email
+reply_to: form.email.value
 };
-// Send the email using EmailJS with your service ID, template ID and user ID
-await emailjs.send('service_bwhrn6k', 'template_5u5fj4e', templateParams);
+try {
+// Send the email using EmailJS
+const response = await emailjs.send("service_bwhrn6k", "template_5u5fj4e", templateParams, "fDgvdA3LWH9pU-uQm");
+if (response.status !== 200) {
+  throw new Error('Failed to send email');
+}
 // Show success message
 formStatus.innerHTML = `
 <div class="flex items-center">
