@@ -519,8 +519,8 @@ time: new Date().toLocaleString()
 }).then(function() {
 // Send auto-reply to the sender (using auto-reply template)
 return emailjs.send("service_bwhrn6k", "template_5u5fj4e", {
-to_name: form.elements.name.value,
-to_email: form.elements.email.value,
+name: form.elements.name.value,
+email: form.elements.email.value,
 from_name: "Nathan Clark",
 reply_to: "nrossclark@gmail.com"
 });
