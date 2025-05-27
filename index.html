@@ -509,12 +509,21 @@ name: form.elements.name.value,
 email: form.elements.email.value,
 message: form.elements.message.value
 };
+// Send notification to you
 emailjs.send("service_bwhrn6k", "template_5u5fj4e", {
 from_name: form.elements.name.value,
 from_email: form.elements.email.value,
 message: form.elements.message.value,
 to_email: "nrossclark@gmail.com",
 reply_to: form.elements.email.value
+}).then(function() {
+    // Send auto-reply to the sender
+    return emailjs.send("service_bwhrn6k", "template_auto_reply", {
+        to_name: form.elements.name.value,
+        to_email: form.elements.email.value,
+        from_name: "Nathan Clark",
+        reply_to: "nrossclark@gmail.com"
+    });
 })
 .then(function(response) {
 console.log("SUCCESS!", response.status, response.text);
