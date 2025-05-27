@@ -509,15 +509,13 @@ name: form.elements.name.value,
 email: form.elements.email.value,
 message: form.elements.message.value
 };
-// Send notification to you (using contact form template)
-emailjs.send("service_bwhrn6k", "template_contact", {
+// Send notification to you (using Contact Us template)
+emailjs.send("service_bwhrn6k", "template_fnnieq8", {
 name: form.elements.name.value,
 email: form.elements.email.value,
 message: form.elements.message.value,
-title: "New Contact Form Submission",
-time: new Date().toLocaleString(),
-to_email: "nrossclark@gmail.com",
-reply_to: form.elements.email.value
+title: "Contact Form Submission",
+time: new Date().toLocaleString()
 }).then(function() {
 // Send auto-reply to the sender (using auto-reply template)
 return emailjs.send("service_bwhrn6k", "template_5u5fj4e", {
