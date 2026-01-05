@@ -79,16 +79,16 @@ overflow: hidden;
 }
 </style>
 </head>
-<body class="font-['Lato'] text-gray-800" id="top">
+<body class="font-['Lato'] text-gray-800 m-0 p-0 w-full overflow-x-hidden" id="top">
 <div id="resumeModal" class="fixed inset-0 bg-black/80 z-50 hidden">
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl mx-2 md:mx-4 bg-white rounded-lg shadow-xl max-h-[95vh] md:max-h-auto">
-<div class="flex justify-between items-center p-3 md:p-6 border-b">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl mx-4 md:mx-4 bg-white rounded-none md:rounded-lg shadow-xl h-full md:max-h-[90vh] md:h-auto">
+<div class="flex justify-between items-center p-4 md:p-6 border-b">
 <h3 class="font-['Playfair_Display'] text-xl md:text-2xl font-bold">Resume</h3>
 <button onclick="closeResumeModal()" class="text-gray-500 hover:text-gray-700">
 <i class="ri-close-line text-xl md:text-2xl"></i>
 </button>
 </div>
-<div class="p-3 md:p-6 max-h-[80vh] md:max-h-[70vh] overflow-y-auto">
+<div class="p-4 md:p-6 h-[calc(100%-80px)] md:max-h-[70vh] overflow-y-auto">
 <div class="space-y-8">
 <div>
 <h4 class="text-xl font-bold mb-4">Nathan Clark</h4>
@@ -189,7 +189,7 @@ overflow: hidden;
 </div>
 </div>
 <nav class="fixed w-full bg-transparent z-50 transition-all duration-300" id="navbar">
-<div class="container mx-auto px-4 sm:px-6 py-4">
+<div class="w-full max-w-none px-4 sm:px-6 py-4">
 <div class="flex justify-between items-center">
 <a href="#" class="text-2xl font-['Playfair_Display'] font-bold text-primary">Nathan Clark</a>
 <div class="hidden md:flex space-x-8">
@@ -206,7 +206,7 @@ overflow: hidden;
 </div>
 </div>
 <div id="mobileMenu" class="hidden md:hidden bg-white w-full shadow-md">
-<div class="container mx-auto px-4 sm:px-6 py-4 flex flex-col space-y-4">
+<div class="w-full px-4 sm:px-6 py-4 flex flex-col space-y-4">
 <a href="#top" class="block py-2 font-medium">Home</a>
 <a href="#about" class="block py-2 font-medium">About</a>
 <a href="#performances" class="block py-2 font-medium">Performances</a>
@@ -218,7 +218,7 @@ overflow: hidden;
 </nav>
 <section class="hero-section h-screen relative">
 <div class="absolute inset-0 bg-black/40"></div>
-<div class="container mx-auto px-4 md:px-6 relative z-10 h-full flex items-center">
+<div class="w-full px-4 md:px-6 relative z-10 h-full flex items-center">
 <div class="max-w-2xl text-white">
 <h1 class="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-6xl font-bold mb-4 md:mb-6">Nathan Clark</h1>
 <p class="text-lg sm:text-xl md:text-2xl font-light mb-6 md:mb-8">Tenor | Classical Vocalist | Performer</p>
@@ -227,7 +227,7 @@ overflow: hidden;
 </div>
 </section>
 <section id="about" class="py-24 bg-gray-50">
-<div class="container mx-auto px-4 sm:px-6">
+<div class="w-full px-4 sm:px-6">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
 <div class="md:col-span-5 order-2 md:order-1">
 <div class="rounded-lg overflow-hidden shadow-xl">
@@ -274,7 +274,7 @@ I believe in the strong connection between physical wellness and vocal performan
 </div>
 </section>
 <section id="performances" class="py-12 md:py-24">
-<div class="container mx-auto px-4 md:px-6">
+<div class="w-full px-4 md:px-6">
 <div class="text-center mb-8 md:mb-12">
 <h2 class="font-['Playfair_Display'] text-2xl sm:text-3xl md:text-4xl font-bold">Performances</h2>
 </div>
@@ -293,7 +293,7 @@ I believe in the strong connection between physical wellness and vocal performan
 </div>
 </section>
 <section id="media" class="py-24 bg-gray-50">
-<div class="container mx-auto px-4 sm:px-6">
+<div class="w-full px-4 sm:px-6">
 <h2 class="font-['Playfair_Display'] text-4xl font-bold mb-12 text-center">Media Gallery</h2>
 <div class="relative">
 <div class="overflow-hidden w-full" id="mediaSlider">
@@ -320,7 +320,7 @@ I believe in the strong connection between physical wellness and vocal performan
 </div>
 </section>
 <section id="gallery" class="py-12 md:py-24">
-<div class="container mx-auto px-4 md:px-6">
+<div class="w-full px-4 md:px-6">
 <h2 class="font-['Playfair_Display'] text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center">Photo Gallery</h2>
 <div class="relative">
 <div class="overflow-hidden w-full" id="gallerySlider">
@@ -354,7 +354,7 @@ I believe in the strong connection between physical wellness and vocal performan
 </div>
 </div>
 <section id="contact" class="py-12 md:py-24 bg-gray-50">
-<div class="container mx-auto px-4 sm:px-6">
+<div class="w-full px-4 sm:px-6">
 <div class="max-w-2xl mx-auto text-center">
 <h2 class="font-['Playfair_Display'] text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8">Get in Touch</h2>
 <p class="text-base md:text-lg mb-8 md:mb-12">For booking inquiries, collaborations, or general questions, please don't hesitate to reach out.</p>
@@ -369,7 +369,7 @@ I believe in the strong connection between physical wellness and vocal performan
 </div>
 </section>
 <footer class="bg-primary text-white py-8 md:py-16">
-<div class="container mx-auto px-4 sm:px-6">
+<div class="w-full px-4 sm:px-6">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
 <div class="text-center md:text-left">
 <h3 class="font-['Playfair_Display'] text-lg md:text-xl font-bold mb-4 md:mb-6">Nathan Clark</h3>
