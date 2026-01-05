@@ -338,13 +338,13 @@ I believe in the strong connection between physical wellness and vocal performan
 </section>
 <div id="photoModal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center">
 <div class="relative w-full max-w-4xl mx-4">
-<button onclick="closePhotoModal()" class="absolute -top-10 right-0 text-white hover:text-gray-300">
-<i class="ri-close-line text-3xl"></i>
+<button onclick="closePhotoModal()" class="absolute -top-10 md:-top-10 -top-6 right-0 text-white hover:text-gray-300 z-10">
+<i class="ri-close-line text-2xl md:text-3xl"></i>
 </button>
-<button onclick="previousPhoto()" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all">
+<button onclick="previousPhoto()" class="absolute left-0 md:left-0 md:-translate-x-12 top-1/2 -translate-y-1/2 w-12 h-12 md:w-10 md:h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all z-10 touch-manipulation">
 <i class="ri-arrow-left-s-line text-2xl"></i>
 </button>
-<button onclick="nextPhoto()" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all">
+<button onclick="nextPhoto()" class="absolute right-0 md:right-0 md:translate-x-12 top-1/2 -translate-y-1/2 w-12 h-12 md:w-10 md:h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all z-10 touch-manipulation">
 <i class="ri-arrow-right-s-line text-2xl"></i>
 </button>
 <img id="photoFrame" class="w-full h-auto max-h-[80vh] object-contain rounded-lg" alt="Gallery Photo">
