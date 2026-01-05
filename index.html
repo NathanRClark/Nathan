@@ -59,9 +59,10 @@ transition: width 0.3s;
 width: 100%;
 }
 .hero-section {
-background-image: url('https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/02887975d84215d5651b750f2bb20d74.jpeg');
+background-image: url('https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/d919af25165676ea3451ddc10ff2e5fb.jpeg');
 background-size: cover;
-background-position: center;
+background-position: center top;
+background-attachment: fixed;
 }
 </style>
 </head>
@@ -103,8 +104,23 @@ background-position: center;
 <div>
 <p class="font-bold">Vocal Performance Major | Baylor University (August 2024 - Present)</p>
 <ul class="list-disc list-inside ml-4 mt-1">
-<li>Studying voice under Dr. Mark Diamond</li>
-<li>Member of Baylor Concert Choir under the direction of Dr. Will McLean</li>
+<li>Studying voice under Dr. Mark Diamond, with additional coachings from Dr. Jeffrey Peterson</li>
+<li>Member of Baylor A Cappella, Chamber Singers, and Baylor Opera</li>
+<li>Performed in Baylor Opera's Notes on Viardot as an ensemble member and one of the Bandits</li>
+<li>Upcoming performance in Baylor Opera's L'Orfeo as ensemble member and part of the Pastori</li>
+<li>Competed at the finals in the National Opera Association's Collegiate Opera Scenes Competition and presented a research poster on high school Young Artist Programs (YAPs) and their role in preparing future opera performers</li>
+</ul>
+</div>
+<div>
+<p class="font-bold">Choral Singer | St. Louis Catholic Church (2025 – Present)</p>
+<ul class="list-disc list-inside ml-4 mt-1">
+<li>Serve as tenor in the church choir, performing for liturgies and weddings</li>
+</ul>
+</div>
+<div>
+<p class="font-bold">Choral Singer | St. Peter's Catholic Student Center (2024 – 2025)</p>
+<ul class="list-disc list-inside ml-4 mt-1">
+<li>Served as cantor and tenor section leader, performing at liturgies and ministry events</li>
 </ul>
 </div>
 <div>
@@ -115,9 +131,9 @@ background-position: center;
 </ul>
 </div>
 <div>
-<p class="font-bold">Choral Singer | St. Paul's United Methodist Church (July 2023)</p>
+<p class="font-bold">Choral Singer | St. Paul's United Methodist Church (2023 – 2024)</p>
 <ul class="list-disc list-inside ml-4 mt-1">
-<li>Maintained a professional attitude while performing for services and concerts.</li>
+<li>Maintained a professional attitude while performing for services and concerts</li>
 </ul>
 </div>
 <div>
@@ -150,7 +166,7 @@ background-position: center;
 </div>
 <div>
 <p class="font-bold">Baylor University (Current Student)</p>
-<p class="ml-4">Baylor Dean's List (2025)</p>
+<p class="ml-4">Dean's List (all semesters)</p>
 </div>
 </div>
 </div>
@@ -159,7 +175,7 @@ background-position: center;
 </div>
 </div>
 </div>
-<nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+<nav class="fixed w-full bg-transparent z-50 transition-all duration-300" id="navbar">
 <div class="container mx-auto px-6 py-4">
 <div class="flex justify-between items-center">
 <a href="#" class="text-2xl font-['Playfair_Display'] font-bold text-primary">Nathan Clark</a>
@@ -168,6 +184,7 @@ background-position: center;
 <a href="#about" class="nav-link font-medium">About</a>
 <a href="#performances" class="nav-link font-medium">Performances</a>
 <a href="#media" class="nav-link font-medium">Media</a>
+<a href="#gallery" class="nav-link font-medium">Photo Gallery</a>
 <a href="#contact" class="nav-link font-medium">Contact</a>
 </div>
 <button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center">
@@ -181,14 +198,15 @@ background-position: center;
 <a href="#about" class="block py-2 font-medium">About</a>
 <a href="#performances" class="block py-2 font-medium">Performances</a>
 <a href="#media" class="block py-2 font-medium">Media</a>
+<a href="#gallery" class="block py-2 font-medium">Photo Gallery</a>
 <a href="#contact" class="block py-2 font-medium">Contact</a>
 </div>
 </div>
 </nav>
-<section class="hero-section min-h-screen relative">
+<section class="hero-section h-screen relative">
 <div class="absolute inset-0 bg-black/40"></div>
-<div class="container mx-auto px-6 relative z-10 h-screen flex items-center">
-<div class="max-w-3xl text-white">
+<div class="container mx-auto px-6 relative z-10 h-full flex items-center">
+<div class="max-w-2xl text-white">
 <h1 class="font-['Playfair_Display'] text-4xl md:text-6xl font-bold mb-6">Nathan Clark</h1>
 <p class="text-xl md:text-2xl font-light mb-8">Tenor | Classical Vocalist | Performer</p>
 <a href="#contact" class="bg-secondary hover:bg-secondary/90 text-white px-6 md:px-8 py-3 rounded-button inline-block transition-all cursor-pointer">Book Now</a>
@@ -200,7 +218,7 @@ background-position: center;
 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
 <div class="md:col-span-5 order-2 md:order-1">
 <div class="rounded-lg overflow-hidden shadow-xl">
-<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/bc6be96f19bdac1393ee0f3df6fe813f.jpeg"
+<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/397833758708dbe6b0522b6b3e2d0462.jpeg"
 alt="Nathan Clark"
 class="w-full h-full object-cover">
 </div>
@@ -210,8 +228,7 @@ class="w-full h-full object-cover">
 <div class="space-y-6 text-lg leading-relaxed">
 <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-6">
 <p class="flex-1 mb-4 md:mb-0">
-As a tenor and classical vocalist currently studying Vocal Performance at Baylor University,
-I am passionate about bringing classical music to life through powerful performances and meaningful connections with audiences.
+I am a tenor and classical vocalist studying Vocal Performance at Baylor University, passionate about bringing classical music to life through expressive performances and meaningful connections with audiences.
 </p>
 <a href="#" onclick="openResumeModal()" class="md:ml-8 bg-secondary hover:bg-secondary/90 text-white px-6 py-2 rounded-button inline-flex items-center justify-center whitespace-nowrap">
 <i class="ri-file-text-line mr-2"></i>
@@ -219,18 +236,13 @@ View Resume
 </a>
 </div>
 <p>
-At Baylor, I am proud to be a member of the Baylor Concert Choir, where I've had the privilege
-of collaborating with exceptional musicians and performing in prestigious venues. Our appearances
-at NACDA and CBNDA, featuring large-scale symphonic works, have been particularly memorable highlights
-of my journey.
+At Baylor, I am a proud member of Baylor A Cappella, Chamber Singers, and Baylor Opera. With Baylor Opera, I performed in our recent production of Notes on Viardot as an ensemble member and one of the Bandits, and I will be part of our upcoming production of L'Orfeo as an ensemble member and part of the Pastori. Earlier this year, I performed with Baylor Opera at the National Opera Conference in Boston and presented my poster, representing the program on a national stage.
 </p>
 <p>
-My dedication to music extends beyond the concert hall to St. Peter's Catholic Student Center,
-where I serve as both a cantor and tenor section leader in the music ministry. This role allows
-me to combine my love for music with my spiritual commitment.
+I study under Dr. Mark Diamond and also receive coachings from Dr. Jeffrey Peterson, refining my technique and expanding my vocal artistry.
 </p>
 <p>
-One of my most cherished experiences was touring with the St. Paul Choral Scholars across Austria, where I had the extraordinary opportunity to perform in historic cathedrals, including the magnificent Salzburg Cathedral and St. Stephen's Cathedral in Vienna. This transformative journey deepened my appreciation for sacred music and its rich cultural heritage.
+Beyond the university, I serve in the music ministry at St. Louis Catholic Church, where I continue to combine my love for music with my faith. One of my most transformative experiences was touring with the St. Paul Choral Scholars across Austria, performing in historic cathedrals including Salzburg Cathedral and St. Stephen's Cathedral in Vienna, which deepened my appreciation for sacred music and its rich cultural heritage.
 </p>
 <p>
 When I'm not performing or practicing, you'll find me pursuing my passion for physical fitness,
@@ -244,170 +256,37 @@ I believe in the strong connection between physical wellness and vocal performan
 </section>
 <section id="performances" class="py-24">
 <div class="container mx-auto px-6">
-<div class="flex flex-col md:flex-row md:justify-between md:items-center mb-12">
-<h2 class="font-['Playfair_Display'] text-4xl font-bold mb-4 md:mb-0">Performances</h2>
-<div class="flex space-x-4">
-<button onclick="switchPerformanceType('upcoming')" class="text-lg font-medium px-4 py-2 rounded-full transition-all" id="upcomingBtn">Upcoming</button>
-<button onclick="switchPerformanceType('previous')" class="text-lg font-medium px-4 py-2 rounded-full transition-all" id="previousBtn">Previous</button>
-</div>
+<div class="text-center mb-12">
+<h2 class="font-['Playfair_Display'] text-4xl font-bold">Performances</h2>
 </div>
 <div class="relative">
-<div class="overflow-hidden" id="performanceSlider">
-<div class="flex transition-transform duration-300 ease-in-out" id="performanceWrapper">
-<!-- Upcoming Performances -->
-<div class="upcoming-performances w-full flex-shrink-0">
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/13b71d7dba9f0d0dfbde09cb0ad1e4bf.jpeg"
-alt="Earth Symphony at National ACDA"
-class="w-full h-48 object-cover">
-<div class="p-6">
-<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">Earth Symphony at National ACDA</h3>
-<p class="text-gray-600 mb-4">March 22, 2025 | 8:00 PM</p>
-<p class="mb-4">The Meyerson Concert Hall</p>
+<div class="overflow-hidden w-full" id="performancesSlider">
+<div class="flex transition-transform duration-300 ease-in-out justify-between" id="performancesWrapper">
 </div>
 </div>
-<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/7b6ef1a63ad886492d1ede8e22b13168.jpeg"
-alt="Baylor Choirs and Band Concert"
-class="w-full h-48 object-cover">
-<div class="p-6">
-<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">Baylor Choirs and Band Concert</h3>
-<p class="text-gray-600 mb-4">March 25, 2025 | 7:30 PM</p>
-<p class="mb-4">Jones Concert Hall</p>
-</div>
-</div>
-<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/4da89f4d41e0d5c9c5ca4c2b4d834327.jpeg"
-alt="Good Friday Mass"
-class="w-full h-48 object-cover">
-<div class="p-6">
-<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">Good Friday Mass</h3>
-<p class="text-gray-600 mb-4">April 18, 2025 | 3:00 PM</p>
-<p class="mb-4">St. Peter's Catholic Student Center</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Previous Performances -->
-<div class="previous-performances w-full flex-shrink-0">
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/26607961b38f84f0878643ea24ae2a33.jpeg"
-alt="Armonía Christmas Concert"
-class="w-full h-48 object-cover">
-<div class="p-6">
-<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">Armonía Christmas Concert</h3>
-<p class="text-gray-600 mb-4">December 21, 2024</p>
-<p class="mb-4">St. Paul Houston Methodist Church</p>
-</div>
-</div>
-<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/cc22d16473b6b8b38904d6a6bcf6ba27.jpeg"
-alt="A Baylor Christmas"
-class="w-full h-48 object-cover">
-<div class="p-6">
-<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">A Baylor Christmas</h3>
-<p class="text-gray-600 mb-4">December 6, 2024</p>
-<p class="mb-4">Waco Hall</p>
-</div>
-</div>
-<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/e4c2a131d5f9facc9246b45e8dbf26e9.jpeg"
-alt="St. Paul Choral Scholars Concert"
-class="w-full h-48 object-cover">
-<div class="p-6">
-<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">St. Paul Choral Scholars Concert</h3>
-<p class="text-gray-600 mb-4">July 16, 2024</p>
-<p class="mb-4">St. Stephen's Cathedral in Vienna</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<button onclick="slide('prev')" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all">
+<button onclick="slidePerformances('prev')" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all">
 <i class="ri-arrow-left-s-line text-xl md:text-2xl"></i>
 </button>
-<button onclick="slide('next')" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all">
+<button onclick="slidePerformances('next')" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all">
 <i class="ri-arrow-right-s-line text-xl md:text-2xl"></i>
 </button>
 </div>
 </div>
 </section>
-<script>
-let currentType = 'upcoming';
-const upcomingBtn = document.getElementById('upcomingBtn');
-const previousBtn = document.getElementById('previousBtn');
-const wrapper = document.getElementById('performanceWrapper');
-function switchPerformanceType(type) {
-currentType = type;
-if (type === 'upcoming') {
-wrapper.style.transform = 'translateX(0)';
-upcomingBtn.classList.add('text-secondary', 'bg-secondary/10');
-previousBtn.classList.remove('text-secondary', 'bg-secondary/10');
-} else {
-wrapper.style.transform = 'translateX(-100%)';
-previousBtn.classList.add('text-secondary', 'bg-secondary/10');
-upcomingBtn.classList.remove('text-secondary', 'bg-secondary/10');
-}
-}
-function slide(direction) {
-if (direction === 'next' && currentType === 'upcoming') {
-switchPerformanceType('previous');
-} else if (direction === 'prev' && currentType === 'previous') {
-switchPerformanceType('upcoming');
-}
-}
-// Initialize the first view
-switchPerformanceType('upcoming');
-</script>
 <section id="media" class="py-24 bg-gray-50">
 <div class="container mx-auto px-6">
 <h2 class="font-['Playfair_Display'] text-4xl font-bold mb-12 text-center">Media Gallery</h2>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/kuN4cj0SwRM')">
 <div class="relative">
-<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/25dbc016cad206d2b60e03f1f86823ba.jpeg"
-alt="Performance"
-class="w-full h-64 object-cover">
-<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<i class="ri-play-circle-line text-white text-5xl"></i>
+<div class="overflow-hidden w-full" id="mediaSlider">
+<div class="flex transition-transform duration-300 ease-in-out justify-between" id="mediaWrapper">
 </div>
 </div>
-<div class="p-6">
-<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">The Boatmen's Dance by Copland</h3>
-<p class="text-gray-600">Solo Performance 2025</p>
-</div>
-</div>
-<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/bsxaqCL4txc')">
-<div class="relative">
-<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/70f51b0b0bb14b1083220b7660a90b46.png"
-alt="Rehearsal"
-class="w-full h-64 object-cover object-top">
-<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<i class="ri-play-circle-line text-white text-5xl"></i>
-</div>
-</div>
-<div class="p-6">
-<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">Keep the Whole World Singing</h3>
-<p class="text-gray-600">Quartet Performance (All Parts)</p>
-</div>
-</div>
-<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/x6fc3F4qZE4')">
-<div class="relative">
-<img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/d1e42ba73acc630142cb9b2b16aef2da.png"
-alt="Choir Performance"
-class="w-full h-64 object-cover">
-<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<i class="ri-play-circle-line text-white text-5xl"></i>
-</div>
-</div>
-<div class="p-6">
-<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">I Don't Want to Set the World on Fire</h3>
-<p class="text-gray-600">Cover of The Ink Spots</p>
-</div>
-</div>
+<button onclick="slideMedia('prev')" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all">
+<i class="ri-arrow-left-s-line text-xl md:text-2xl"></i>
+</button>
+<button onclick="slideMedia('next')" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all">
+<i class="ri-arrow-right-s-line text-xl md:text-2xl"></i>
+</button>
 </div>
 </div>
 <div id="videoModal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center">
@@ -421,7 +300,41 @@ class="w-full h-64 object-cover">
 </div>
 </div>
 </section>
-<section id="contact" class="py-24">
+<section id="gallery" class="py-24">
+<div class="container mx-auto px-6">
+<h2 class="font-['Playfair_Display'] text-4xl font-bold mb-12 text-center">Photo Gallery</h2>
+<div class="relative">
+<div class="overflow-hidden w-full" id="gallerySlider">
+<div class="flex transition-transform duration-300 ease-in-out justify-between" id="galleryWrapper">
+</div>
+</div>
+<button onclick="slideGallery('prev')" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all">
+<i class="ri-arrow-left-s-line text-xl md:text-2xl"></i>
+</button>
+<button onclick="slideGallery('next')" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all">
+<i class="ri-arrow-right-s-line text-xl md:text-2xl"></i>
+</button>
+</div>
+</div>
+</section>
+<div id="photoModal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center">
+<div class="relative w-full max-w-4xl mx-4">
+<button onclick="closePhotoModal()" class="absolute -top-10 right-0 text-white hover:text-gray-300">
+<i class="ri-close-line text-3xl"></i>
+</button>
+<button onclick="previousPhoto()" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all">
+<i class="ri-arrow-left-s-line text-2xl"></i>
+</button>
+<button onclick="nextPhoto()" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all">
+<i class="ri-arrow-right-s-line text-2xl"></i>
+</button>
+<img id="photoFrame" class="w-full h-auto max-h-[80vh] object-contain rounded-lg" alt="Gallery Photo">
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm">
+<span id="photoCounter">1 / 3</span>
+</div>
+</div>
+</div>
+<section id="contact" class="py-24 bg-gray-50">
 <div class="container mx-auto px-6">
 <div class="max-w-2xl mx-auto text-center">
 <h2 class="font-['Playfair_Display'] text-4xl font-bold mb-8">Get in Touch</h2>
@@ -429,7 +342,7 @@ class="w-full h-64 object-cover">
 <form class="space-y-6" id="contactForm">
 <input type="text" name="name" placeholder="Name" required class="w-full px-4 py-3 rounded border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary">
 <input type="email" name="email" placeholder="Email" required class="w-full px-4 py-3 rounded border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary">
-<textarea name="message" placeholder="Message" rows="5" required class="w-full px-4 py-3 rounded border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary"></textarea>
+<textarea name="message" placeholder="Message" rows="5" required class="w-full px-4 py-3 rounded border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary resize-none"></textarea>
 <button type="submit" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-button transition-all cursor-pointer">Send Message</button>
 </form>
 <div id="formStatus" class="mt-4 text-center hidden"></div>
@@ -592,6 +505,98 @@ videoFrame.src = '';
 modal.classList.add('hidden');
 document.body.style.overflow = '';
 }
+const allGalleryPhotos = [
+'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/03ef876581721b29bb293963a22dc25f.jpeg',
+'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/c08107141c52d48d497682f5664fbefe.jpeg',
+'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/269d617f079d230d4f411c7a2d1d10a7.jpeg',
+'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/72ae55d848ed4d6e069c909231d0d727.jpeg',
+'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/d919af25165676ea3451ddc10ff2e5fb.jpeg',
+'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/bddd360e8c557ddb234aaa8a39c0f586.jpeg',
+'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/8d3c387dec8296fb404e5f48a6be9d71.jpeg',
+'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/d062031731a8672e2254262a8c3c3505.jpeg',
+'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/c7edff364a39e1ebe8753339863b53d5.jpeg',
+'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/3867d3431ff87211a985b580eb636b8a.jpeg',
+'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/7e7eae8e0da4f216ebd1e145ebfc0874.jpeg'
+];
+const allMediaItems = [
+{
+image: 'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/19861938e4efe38ddb42b7582a390bc4.jpeg',
+title: 'Der Neugierige - Franz Schubert',
+subtitle: 'Solo Performance 2025',
+videoUrl: 'https://www.youtube.com/embed/WOFWArLhsqw'
+},
+{
+image: 'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/25dbc016cad206d2b60e03f1f86823ba.jpeg',
+title: 'The Boatmen\'s Dance - Copland',
+subtitle: 'Solo Performance 2025',
+videoUrl: 'https://www.youtube.com/embed/kuN4cj0SwRM'
+},
+{
+image: 'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/e4abad67dd853b440211b1caec6fc340.jpeg',
+title: 'Madrigal - Vincent d\'Indy',
+subtitle: 'Solo Performance 2025',
+videoUrl: 'https://www.youtube.com/embed/nLmLhSt8wxc'
+},
+{
+image: 'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/70f51b0b0bb14b1083220b7660a90b46.png',
+title: 'Keep the Whole World Singing',
+subtitle: 'Quartet Performance (All Parts)',
+videoUrl: 'https://www.youtube.com/embed/bsxaqCL4txc'
+},
+{
+image: 'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/d1e42ba73acc630142cb9b2b16aef2da.png',
+title: 'I Don\'t Want to Set the World on Fire',
+subtitle: 'Cover of The Ink Spots',
+videoUrl: 'https://www.youtube.com/embed/x6fc3F4qZE4'
+}
+];
+const galleryPhotos = allGalleryPhotos; // Keep for modal functionality
+let currentPhotoIndex = 0;
+function openPhotoModal(photoIndex) {
+currentPhotoIndex = photoIndex;
+const modal = document.getElementById('photoModal');
+const photoFrame = document.getElementById('photoFrame');
+const photoCounter = document.getElementById('photoCounter');
+photoFrame.src = galleryPhotos[currentPhotoIndex];
+photoCounter.textContent = `${currentPhotoIndex + 1} / ${galleryPhotos.length}`;
+modal.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+document.addEventListener('keydown', handlePhotoKeyNavigation);
+}
+function closePhotoModal() {
+const modal = document.getElementById('photoModal');
+const photoFrame = document.getElementById('photoFrame');
+photoFrame.src = '';
+modal.classList.add('hidden');
+document.body.style.overflow = '';
+document.removeEventListener('keydown', handlePhotoKeyNavigation);
+}
+function nextPhoto() {
+currentPhotoIndex = (currentPhotoIndex + 1) % galleryPhotos.length;
+const photoFrame = document.getElementById('photoFrame');
+const photoCounter = document.getElementById('photoCounter');
+photoFrame.src = galleryPhotos[currentPhotoIndex];
+photoCounter.textContent = `${currentPhotoIndex + 1} / ${galleryPhotos.length}`;
+}
+function previousPhoto() {
+currentPhotoIndex = (currentPhotoIndex - 1 + galleryPhotos.length) % galleryPhotos.length;
+const photoFrame = document.getElementById('photoFrame');
+const photoCounter = document.getElementById('photoCounter');
+photoFrame.src = galleryPhotos[currentPhotoIndex];
+photoCounter.textContent = `${currentPhotoIndex + 1} / ${galleryPhotos.length}`;
+}
+function handlePhotoKeyNavigation(event) {
+if (event.key === 'ArrowRight') {
+event.preventDefault();
+nextPhoto();
+} else if (event.key === 'ArrowLeft') {
+event.preventDefault();
+previousPhoto();
+} else if (event.key === 'Escape') {
+event.preventDefault();
+closePhotoModal();
+}
+}
 function openResumeModal() {
 const modal = document.getElementById('resumeModal');
 modal.classList.remove('hidden');
@@ -602,28 +607,350 @@ const modal = document.getElementById('resumeModal');
 modal.classList.add('hidden');
 document.body.style.overflow = '';
 }
+let currentGalleryIndex = 0;
+function slideGallery(direction) {
+const wrapper = document.getElementById('galleryWrapper');
+const containerWidth = wrapper.parentElement.offsetWidth;
+const maxIndex = 2; // We now have 3 slides total
+if (direction === 'next' && currentGalleryIndex < maxIndex) {
+currentGalleryIndex++;
+} else if (direction === 'prev' && currentGalleryIndex > 0) {
+currentGalleryIndex--;
+}
+const translateX = currentGalleryIndex * containerWidth;
+wrapper.style.transform = `translateX(-${translateX}px)`;
+updateGalleryButtonStates(maxIndex);
+}
+let currentPerformanceIndex = 0;
+function slidePerformances(direction) {
+const wrapper = document.getElementById('performancesWrapper');
+const containerWidth = wrapper.parentElement.offsetWidth;
+const visibleItems = 3; // Always show 3 items
+const totalSets = Math.ceil(allPerformances.length / visibleItems);
+const maxIndex = totalSets - 1;
+if (direction === 'next' && currentPerformanceIndex < maxIndex) {
+currentPerformanceIndex++;
+} else if (direction === 'prev' && currentPerformanceIndex > 0) {
+currentPerformanceIndex--;
+}
+const translateX = currentPerformanceIndex * containerWidth;
+wrapper.style.transform = `translateX(-${translateX}px)`;
+updatePerformanceButtonStates(maxIndex);
+}
+const allPerformances = [
+{
+image: 'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/269d617f079d230d4f411c7a2d1d10a7.jpeg',
+title: 'Notes on Viardot Opera',
+date: 'November 7, 2024',
+venue: 'Jones Theatre'
+},
+{
+image: 'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/13b71d7dba9f0d0dfbde09cb0ad1e4bf.jpeg',
+title: 'Earth Symphony at National ACDA',
+date: 'March 22, 2024',
+venue: 'The Meyerson Concert Hall'
+},
+{
+image: 'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/4da89f4d41e0d5c9c5ca4c2b4d834327.jpeg',
+title: 'Good Friday Mass Cantor',
+date: 'April 18, 2024',
+venue: 'St. Peter\'s Catholic Student Center'
+},
+{
+image: 'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/26607961b38f84f0878643ea24ae2a33.jpeg',
+title: 'Armonía Christmas Concert',
+date: 'December 21, 2024',
+venue: 'St. Paul Houston Methodist Church'
+},
+{
+image: 'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/cc22d16473b6b8b38904d6a6bcf6ba27.jpeg',
+title: 'A Baylor Christmas',
+date: 'December 2024 and 2025',
+venue: 'Waco Hall'
+},
+{
+image: 'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/e4c2a131d5f9facc9246b45e8dbf26e9.jpeg',
+title: 'St. Paul Choral Scholars Concert',
+date: 'July 16, 2024',
+venue: 'St. Stephen\'s Cathedral in Vienna'
+}
+];
+function renderPerformances() {
+const wrapper = document.getElementById('performancesWrapper');
+const visibleItems = 3;
+const totalSets = Math.ceil(allPerformances.length / visibleItems);
+let html = '';
+for (let set = 0; set < totalSets; set++) {
+const startIndex = set * visibleItems;
+const endIndex = Math.min(startIndex + visibleItems, allPerformances.length);
+const setPerformances = allPerformances.slice(startIndex, endIndex);
+html += '<div class="w-full flex-shrink-0 flex justify-center gap-8">';
+setPerformances.forEach(performance => {
+html += `
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex-shrink-0 w-96">
+<img src="${performance.image}"
+alt="${performance.title}"
+class="w-full h-56 object-cover">
+<div class="p-6">
+<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">${performance.title}</h3>
+<p class="text-gray-600 mb-4">${performance.date}</p>
+<p class="mb-4">${performance.venue}</p>
+</div>
+</div>
+`;
+});
+html += '</div>';
+}
+wrapper.innerHTML = html;
+wrapper.style.transform = 'translateX(0px)';
+const maxIndex = totalSets - 1;
+updatePerformanceButtonStates(maxIndex);
+}
+function updatePerformanceButtonStates(maxIndex) {
+const prevBtn = document.querySelector('#performances button[onclick="slidePerformances(\'prev\')"]');
+const nextBtn = document.querySelector('#performances button[onclick="slidePerformances(\'next\')"]');
+// Update previous button state
+if (currentPerformanceIndex === 0) {
+prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
+prevBtn.classList.remove('hover:bg-gray-50');
+} else {
+prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+prevBtn.classList.add('hover:bg-gray-50');
+}
+// Update next button state
+if (currentPerformanceIndex >= maxIndex) {
+nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+nextBtn.classList.remove('hover:bg-gray-50');
+} else {
+nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+nextBtn.classList.add('hover:bg-gray-50');
+}
+}
 document.getElementById('resumeModal').addEventListener('click', (e) => {
 if (e.target === document.getElementById('resumeModal')) {
 closeResumeModal();
 }
 });
 let currentMediaIndex = 0;
-const mediaItems = document.querySelectorAll('#mediaWrapper > div');
-const mediaItemWidth = mediaItems[0].offsetWidth + 32; // Including margin
 function slideMedia(direction) {
 const wrapper = document.getElementById('mediaWrapper');
-const maxIndex = mediaItems.length - 3;
+const containerWidth = wrapper.parentElement.offsetWidth;
+const visibleItems = 3; // Always show 3 items
+const totalSets = Math.ceil(allMediaItems.length / visibleItems);
+const maxIndex = totalSets - 1;
 if (direction === 'next' && currentMediaIndex < maxIndex) {
 currentMediaIndex++;
 } else if (direction === 'prev' && currentMediaIndex > 0) {
 currentMediaIndex--;
 }
-wrapper.style.transform = `translateX(-${currentMediaIndex * mediaItemWidth}px)`;
+const translateX = currentMediaIndex * containerWidth;
+wrapper.style.transform = `translateX(-${translateX}px)`;
+updateMediaButtonStates(maxIndex);
+}
+function updateMediaButtonStates(maxIndex) {
+const prevBtn = document.querySelector('#media button[onclick="slideMedia(\'prev\')"]');
+const nextBtn = document.querySelector('#media button[onclick="slideMedia(\'next\')"]');
+// Update previous button state
+if (currentMediaIndex === 0) {
+prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
+prevBtn.classList.remove('hover:bg-gray-50');
+} else {
+prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+prevBtn.classList.add('hover:bg-gray-50');
+}
+// Update next button state
+if (currentMediaIndex >= maxIndex) {
+nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+nextBtn.classList.remove('hover:bg-gray-50');
+} else {
+nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+nextBtn.classList.add('hover:bg-gray-50');
+}
+}
+function updateGalleryButtonStates(maxIndex) {
+const prevBtn = document.querySelector('#gallery button[onclick="slideGallery(\'prev\')"]');
+const nextBtn = document.querySelector('#gallery button[onclick="slideGallery(\'next\')"]');
+// Update previous button state
+if (currentGalleryIndex === 0) {
+prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
+prevBtn.classList.remove('hover:bg-gray-50');
+} else {
+prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+prevBtn.classList.add('hover:bg-gray-50');
+}
+// Update next button state
+if (currentGalleryIndex >= maxIndex) {
+nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+nextBtn.classList.remove('hover:bg-gray-50');
+} else {
+nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+nextBtn.classList.add('hover:bg-gray-50');
+}
+}
+function renderMedia() {
+const wrapper = document.getElementById('mediaWrapper');
+const visibleItems = 3;
+const totalSets = Math.ceil(allMediaItems.length / visibleItems);
+let html = '';
+for (let set = 0; set < totalSets; set++) {
+const startIndex = set * visibleItems;
+const endIndex = Math.min(startIndex + visibleItems, allMediaItems.length);
+const setItems = allMediaItems.slice(startIndex, endIndex);
+html += '<div class="w-full flex-shrink-0 flex justify-center gap-8">';
+setItems.forEach(item => {
+html += `
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer flex-shrink-0 w-96" onclick="openVideoModal('${item.videoUrl}')">
+<div class="relative">
+<img src="${item.image}"
+alt="${item.title}"
+class="w-full h-64 object-cover ${item.image.includes('.png') ? 'object-top' : ''}">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<i class="ri-play-circle-line text-white text-5xl"></i>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">${item.title}</h3>
+<p class="text-gray-600">${item.subtitle}</p>
+</div>
+</div>
+`;
+});
+html += '</div>';
+}
+wrapper.innerHTML = html;
+wrapper.style.transform = 'translateX(0px)';
+const maxIndex = totalSets - 1;
+updateMediaButtonStates(maxIndex);
+}
+function renderGallery() {
+const wrapper = document.getElementById('galleryWrapper');
+let html = '';
+// First slide: horizontal photos (indices 0-5)
+const horizontalPhotos = allGalleryPhotos.slice(0, 6);
+html += '<div class="w-full flex-shrink-0 flex justify-center gap-8">';
+for (let i = 0; i < 3; i++) {
+if (horizontalPhotos[i]) {
+html += `
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer flex-shrink-0 w-96" onclick="openPhotoModal(${i})">
+<img src="${horizontalPhotos[i]}"
+alt="Gallery Photo"
+class="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-300">
+</div>
+`;
+}
+}
+html += '</div>';
+// Second slide: remaining horizontal photos (indices 3-5)
+html += '<div class="w-full flex-shrink-0 flex justify-center gap-8">';
+for (let i = 3; i < 6; i++) {
+if (horizontalPhotos[i]) {
+html += `
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer flex-shrink-0 w-96" onclick="openPhotoModal(${i})">
+<img src="${horizontalPhotos[i]}"
+alt="Gallery Photo"
+class="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-300">
+</div>
+`;
+}
+}
+html += '</div>';
+// Third slide: all vertical photos (indices 6-10) - 5 photos displayed together
+const verticalPhotos = allGalleryPhotos.slice(6);
+html += '<div class="w-full flex-shrink-0 flex justify-center gap-4">';
+verticalPhotos.forEach((photo, index) => {
+const originalIndex = 6 + index;
+let objectPosition = 'object-top';
+if (photo.includes('c08107141c52d48d497682f5664fbefe') || photo.includes('72ae55d848ed4d6e069c909231d0d727')) {
+objectPosition = 'object-center';
+} else if (photo.includes('c7edff364a39e1ebe8753339863b53d5')) {
+objectPosition = 'object-[center_25%]';
+} else if (photo.includes('3867d3431ff87211a985b580eb636b8a') || photo.includes('7e7eae8e0da4f216ebd1e145ebfc0874')) {
+objectPosition = 'object-center';
+}
+html += `
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer flex-shrink-0 w-48" onclick="openPhotoModal(${originalIndex})">
+<img src="${photo}"
+alt="Gallery Photo"
+class="w-full h-64 object-cover ${objectPosition} group-hover:scale-105 transition-transform duration-300">
+</div>
+`;
+});
+html += '</div>';
+wrapper.innerHTML = html;
+wrapper.style.transform = 'translateX(0px)';
+const maxIndex = 2; // We now have 3 slides (0, 1, 2)
+updateGalleryButtonStates(maxIndex);
 }
 document.getElementById('videoModal').addEventListener('click', (e) => {
 if (e.target === document.getElementById('videoModal')) {
 closeVideoModal();
 }
+});
+document.getElementById('photoModal').addEventListener('click', (e) => {
+if (e.target === document.getElementById('photoModal')) {
+closePhotoModal();
+}
+});
+// Initialize slider button states on page load
+document.addEventListener('DOMContentLoaded', function() {
+// Initialize performance data
+renderPerformances();
+// Initialize media slider
+renderMedia();
+// Initialize gallery slider
+renderGallery();
+// Handle navbar background on scroll
+const navbar = document.getElementById('navbar');
+const navLogo = navbar.querySelector('a[href="#"]');
+const navLinks = document.querySelectorAll('.nav-link');
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+let isScrolling = false;
+function updateNavbar() {
+if (window.scrollY > 50) {
+navbar.classList.remove('bg-transparent');
+navbar.classList.add('bg-white/95', 'backdrop-blur-sm', 'shadow-sm');
+// Change text colors to dark
+if (navLogo) {
+navLogo.classList.remove('text-white');
+navLogo.classList.add('text-primary');
+}
+navLinks.forEach(link => {
+link.classList.remove('text-white');
+link.classList.add('text-gray-800');
+});
+if (mobileMenuBtn) {
+mobileMenuBtn.classList.remove('text-white');
+mobileMenuBtn.classList.add('text-gray-800');
+}
+} else {
+navbar.classList.remove('bg-white/95', 'backdrop-blur-sm', 'shadow-sm');
+navbar.classList.add('bg-transparent');
+// Change text colors back to white
+if (navLogo) {
+navLogo.classList.remove('text-primary');
+navLogo.classList.add('text-white');
+}
+navLinks.forEach(link => {
+link.classList.remove('text-gray-800');
+link.classList.add('text-white');
+});
+if (mobileMenuBtn) {
+mobileMenuBtn.classList.remove('text-gray-800');
+mobileMenuBtn.classList.add('text-white');
+}
+}
+}
+window.addEventListener('scroll', function() {
+if (!isScrolling) {
+requestAnimationFrame(function() {
+updateNavbar();
+isScrolling = false;
+});
+isScrolling = true;
+}
+});
+// Initial navbar state
+updateNavbar();
 });
 </script>
 </body>
