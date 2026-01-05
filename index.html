@@ -71,6 +71,12 @@ background-size: cover;
 background-attachment: scroll;
 }
 }
+.line-clamp-2 {
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
+}
 </style>
 </head>
 <body class="font-['Lato'] text-gray-800" id="top">
@@ -691,7 +697,7 @@ venue: 'St. Stephen\'s Cathedral in Vienna'
 function renderPerformances() {
 const wrapper = document.getElementById('performancesWrapper');
 const isMobile = window.innerWidth < 768;
-const visibleItems = isMobile ? 1 : 3;
+const visibleItems = 3; // Always show 3 items on both mobile and desktop
 const totalSets = Math.ceil(allPerformances.length / visibleItems);
 let html = '';
 for (let set = 0; set < totalSets; set++) {
