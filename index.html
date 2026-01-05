@@ -341,10 +341,10 @@ I believe in the strong connection between physical wellness and vocal performan
 <button onclick="closePhotoModal()" class="absolute -top-10 md:-top-10 -top-6 right-0 text-white hover:text-gray-300 z-10">
 <i class="ri-close-line text-2xl md:text-3xl"></i>
 </button>
-<button onclick="previousPhoto()" class="absolute left-2 md:left-0 md:-translate-x-12 top-1/2 -translate-y-1/2 w-12 h-12 md:w-12 md:h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 hover:border-white/30 transition-all z-10 touch-manipulation shadow-lg opacity-70 md:opacity-100" id="prevPhotoBtn">
+<button onclick="previousPhoto()" class="absolute left-2 md:left-0 md:-translate-x-12 top-1/2 -translate-y-1/2 w-12 h-12 md:w-12 md:h-12 bg-white/15 backdrop-blur-sm border border-white/30 rounded-full flex items-center justify-center text-white hover:bg-white/25 hover:border-white/40 transition-colors z-10 touch-manipulation shadow-md opacity-70 md:opacity-100" id="prevPhotoBtn">
 <i class="ri-arrow-left-s-line text-2xl"></i>
 </button>
-<button onclick="nextPhoto()" class="absolute right-2 md:right-0 md:translate-x-12 top-1/2 -translate-y-1/2 w-12 h-12 md:w-12 md:h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 hover:border-white/30 transition-all z-10 touch-manipulation shadow-lg opacity-70 md:opacity-100" id="nextPhotoBtn">
+<button onclick="nextPhoto()" class="absolute right-2 md:right-0 md:translate-x-12 top-1/2 -translate-y-1/2 w-12 h-12 md:w-12 md:h-12 bg-white/15 backdrop-blur-sm border border-white/30 rounded-full flex items-center justify-center text-white hover:bg-white/25 hover:border-white/40 transition-colors z-10 touch-manipulation shadow-md opacity-70 md:opacity-100" id="nextPhotoBtn">
 <i class="ri-arrow-right-s-line text-2xl"></i>
 </button>
 <img id="photoFrame" class="w-full h-auto max-h-[80vh] object-contain rounded-lg" alt="Gallery Photo">
@@ -581,7 +581,9 @@ photoCounter.textContent = `${currentPhotoIndex + 1} / ${galleryPhotos.length}`;
 modal.classList.remove('hidden');
 document.body.style.overflow = 'hidden';
 document.addEventListener('keydown', handlePhotoKeyNavigation);
-setTimeout(maintainArrowOpacity, 50);
+requestAnimationFrame(() => {
+setTimeout(maintainArrowOpacity, 100);
+});
 }
 function closePhotoModal() {
 const modal = document.getElementById('photoModal');
@@ -611,10 +613,8 @@ function maintainArrowOpacity() {
 const prevBtn = document.getElementById('prevPhotoBtn');
 const nextBtn = document.getElementById('nextPhotoBtn');
 if (window.innerWidth < 768 && prevBtn && nextBtn) {
-prevBtn.style.opacity = '0.7';
-nextBtn.style.opacity = '0.7';
-prevBtn.style.setProperty('opacity', '0.7', 'important');
-nextBtn.style.setProperty('opacity', '0.7', 'important');
+prevBtn.style.cssText = 'opacity: 0.7 !important; backdrop-filter: blur(8px) !important;';
+nextBtn.style.cssText = 'opacity: 0.7 !important; backdrop-filter: blur(8px) !important;';
 }
 }
 function handlePhotoKeyNavigation(event) {
