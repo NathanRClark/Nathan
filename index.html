@@ -283,11 +283,11 @@ I believe in the strong connection between physical wellness and vocal performan
 <div class="flex transition-transform duration-300 ease-in-out justify-between" id="performancesWrapper">
 </div>
 </div>
-<button onclick="slidePerformances('prev')" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all z-10">
-<i class="ri-arrow-left-s-line text-lg md:text-2xl"></i>
+<button onclick="slidePerformances('prev')" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-gray-50 transition-all z-10">
+<i class="ri-arrow-left-s-line text-2xl"></i>
 </button>
-<button onclick="slidePerformances('next')" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all z-10">
-<i class="ri-arrow-right-s-line text-lg md:text-2xl"></i>
+<button onclick="slidePerformances('next')" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-gray-50 transition-all z-10">
+<i class="ri-arrow-right-s-line text-2xl"></i>
 </button>
 </div>
 </div>
@@ -300,11 +300,11 @@ I believe in the strong connection between physical wellness and vocal performan
 <div class="flex transition-transform duration-300 ease-in-out justify-between" id="mediaWrapper">
 </div>
 </div>
-<button onclick="slideMedia('prev')" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all">
-<i class="ri-arrow-left-s-line text-xl md:text-2xl"></i>
+<button onclick="slideMedia('prev')" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-gray-50 transition-all">
+<i class="ri-arrow-left-s-line text-2xl"></i>
 </button>
-<button onclick="slideMedia('next')" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all">
-<i class="ri-arrow-right-s-line text-xl md:text-2xl"></i>
+<button onclick="slideMedia('next')" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-gray-50 transition-all">
+<i class="ri-arrow-right-s-line text-2xl"></i>
 </button>
 </div>
 </div>
@@ -327,11 +327,11 @@ I believe in the strong connection between physical wellness and vocal performan
 <div class="flex transition-transform duration-300 ease-in-out justify-between" id="galleryWrapper">
 </div>
 </div>
-<button onclick="slideGallery('prev')" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all z-10">
-<i class="ri-arrow-left-s-line text-lg md:text-2xl"></i>
+<button onclick="slideGallery('prev')" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-gray-50 transition-all z-10">
+<i class="ri-arrow-left-s-line text-2xl"></i>
 </button>
-<button onclick="slideGallery('next')" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all z-10">
-<i class="ri-arrow-right-s-line text-lg md:text-2xl"></i>
+<button onclick="slideGallery('next')" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-gray-50 transition-all z-10">
+<i class="ri-arrow-right-s-line text-2xl"></i>
 </button>
 </div>
 </div>
@@ -696,25 +696,51 @@ venue: 'St. Stephen\'s Cathedral in Vienna'
 ];
 function renderPerformances() {
 const wrapper = document.getElementById('performancesWrapper');
+const slider = document.getElementById('performancesSlider');
 const isMobile = window.innerWidth < 768;
-const visibleItems = 3; // Always show 3 items on both mobile and desktop
+if (isMobile) {
+// Mobile: horizontal scroll
+let html = '';
+allPerformances.forEach(performance => {
+html += `
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex-shrink-0 w-64 mr-4">
+<img src="${performance.image}"
+alt="${performance.title}"
+class="w-full h-40 object-cover">
+<div class="p-3">
+<h3 class="font-['Playfair_Display'] text-base font-bold mb-1 line-clamp-2">${performance.title}</h3>
+<p class="text-gray-600 mb-1 text-xs">${performance.date}</p>
+<p class="text-xs line-clamp-2">${performance.venue}</p>
+</div>
+</div>
+`;
+});
+wrapper.innerHTML = html;
+wrapper.className = 'flex overflow-x-auto pb-2';
+wrapper.style.scrollBehavior = 'smooth';
+wrapper.style.transform = 'none';
+slider.className = 'overflow-hidden w-full';
+} else {
+// Desktop: existing slider behavior
+slider.className = 'overflow-hidden w-full';
+const visibleItems = 3;
 const totalSets = Math.ceil(allPerformances.length / visibleItems);
 let html = '';
 for (let set = 0; set < totalSets; set++) {
 const startIndex = set * visibleItems;
 const endIndex = Math.min(startIndex + visibleItems, allPerformances.length);
 const setPerformances = allPerformances.slice(startIndex, endIndex);
-html += `<div class="w-full flex-shrink-0 flex justify-center ${isMobile ? 'px-4' : 'gap-8'}">`;
+html += `<div class="w-full flex-shrink-0 flex justify-center gap-8">`;
 setPerformances.forEach(performance => {
 html += `
 <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
 <img src="${performance.image}"
 alt="${performance.title}"
-class="w-full ${isMobile ? 'h-32' : 'h-56'} object-cover">
-<div class="${isMobile ? 'p-2' : 'p-6'}">
-<h3 class="font-['Playfair_Display'] ${isMobile ? 'text-sm' : 'text-xl'} font-bold mb-1 md:mb-2 line-clamp-2">${performance.title}</h3>
-<p class="text-gray-600 mb-1 md:mb-4 ${isMobile ? 'text-xs' : 'text-base'}">${performance.date}</p>
-<p class="${isMobile ? 'text-xs' : 'text-base'} line-clamp-2">${performance.venue}</p>
+class="w-full h-56 object-cover">
+<div class="p-6">
+<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2 line-clamp-2">${performance.title}</h3>
+<p class="text-gray-600 mb-4 text-base">${performance.date}</p>
+<p class="text-base line-clamp-2">${performance.venue}</p>
 </div>
 </div>
 `;
@@ -722,9 +748,12 @@ class="w-full ${isMobile ? 'h-32' : 'h-56'} object-cover">
 html += '</div>';
 }
 wrapper.innerHTML = html;
+wrapper.className = 'flex transition-transform duration-300 ease-in-out';
 wrapper.style.transform = 'translateX(0px)';
+currentPerformanceIndex = 0;
 const maxIndex = totalSets - 1;
 updatePerformanceButtonStates(maxIndex);
+}
 }
 function updatePerformanceButtonStates(maxIndex) {
 const prevBtn = document.querySelector('#performances button[onclick="slidePerformances(\'prev\')"]');
@@ -809,29 +838,59 @@ nextBtn.classList.add('hover:bg-gray-50');
 }
 function renderMedia() {
 const wrapper = document.getElementById('mediaWrapper');
+const slider = document.getElementById('mediaSlider');
 const isMobile = window.innerWidth < 768;
-const visibleItems = isMobile ? 1 : 3;
+if (isMobile) {
+// Mobile: horizontal scroll
+let html = '';
+allMediaItems.forEach(item => {
+html += `
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer flex-shrink-0 w-72 mr-4" onclick="openVideoModal('${item.videoUrl}')">
+<div class="relative">
+<img src="${item.image}"
+alt="${item.title}"
+class="w-full h-48 object-cover ${item.image.includes('.png') ? 'object-top' : ''}">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<i class="ri-play-circle-line text-white text-4xl"></i>
+</div>
+</div>
+<div class="p-4">
+<h3 class="font-['Playfair_Display'] text-lg font-bold mb-2">${item.title}</h3>
+<p class="text-gray-600 text-sm">${item.subtitle}</p>
+</div>
+</div>
+`;
+});
+wrapper.innerHTML = html;
+wrapper.className = 'flex overflow-x-auto pb-2';
+wrapper.style.scrollBehavior = 'smooth';
+wrapper.style.transform = 'none';
+slider.className = 'overflow-hidden w-full';
+} else {
+// Desktop: existing slider behavior
+slider.className = 'overflow-hidden w-full';
+const visibleItems = 3;
 const totalSets = Math.ceil(allMediaItems.length / visibleItems);
 let html = '';
 for (let set = 0; set < totalSets; set++) {
 const startIndex = set * visibleItems;
 const endIndex = Math.min(startIndex + visibleItems, allMediaItems.length);
 const setItems = allMediaItems.slice(startIndex, endIndex);
-html += `<div class="w-full flex-shrink-0 flex justify-center ${isMobile ? 'px-4' : 'gap-8'}">`;
+html += `<div class="w-full flex-shrink-0 flex justify-center gap-8">`;
 setItems.forEach(item => {
 html += `
-<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer flex-shrink-0 ${isMobile ? 'w-full max-w-sm mx-auto' : 'w-96'}" onclick="openVideoModal('${item.videoUrl}')">
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer flex-shrink-0 w-96" onclick="openVideoModal('${item.videoUrl}')">
 <div class="relative">
 <img src="${item.image}"
 alt="${item.title}"
-class="w-full h-48 md:h-64 object-cover ${item.image.includes('.png') ? 'object-top' : ''}">
+class="w-full h-64 object-cover ${item.image.includes('.png') ? 'object-top' : ''}">
 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<i class="ri-play-circle-line text-white text-4xl md:text-5xl"></i>
+<i class="ri-play-circle-line text-white text-5xl"></i>
 </div>
 </div>
-<div class="p-4 md:p-6">
-<h3 class="font-['Playfair_Display'] text-lg md:text-xl font-bold mb-2">${item.title}</h3>
-<p class="text-gray-600 text-sm md:text-base">${item.subtitle}</p>
+<div class="p-6">
+<h3 class="font-['Playfair_Display'] text-xl font-bold mb-2">${item.title}</h3>
+<p class="text-gray-600 text-base">${item.subtitle}</p>
 </div>
 </div>
 `;
@@ -839,16 +898,20 @@ class="w-full h-48 md:h-64 object-cover ${item.image.includes('.png') ? 'object-
 html += '</div>';
 }
 wrapper.innerHTML = html;
+wrapper.className = 'flex transition-transform duration-300 ease-in-out';
 wrapper.style.transform = 'translateX(0px)';
+currentMediaIndex = 0;
 const maxIndex = totalSets - 1;
 updateMediaButtonStates(maxIndex);
 }
+}
 function renderGallery() {
 const wrapper = document.getElementById('galleryWrapper');
+const slider = document.getElementById('gallerySlider');
 const isMobile = window.innerWidth < 768;
 let html = '';
 if (isMobile) {
-// Mobile: show one photo per slide
+// Mobile: horizontal scroll
 allGalleryPhotos.forEach((photo, index) => {
 let objectPosition = 'object-top';
 if (photo.includes('c08107141c52d48d497682f5664fbefe') || photo.includes('72ae55d848ed4d6e069c909231d0d727')) {
@@ -859,17 +922,21 @@ objectPosition = 'object-[center_25%]';
 objectPosition = 'object-center';
 }
 html += `
-<div class="w-full flex-shrink-0 flex justify-center px-4">
-<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer w-full max-w-sm" onclick="openPhotoModal(${index})">
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer flex-shrink-0 w-64 mr-4" onclick="openPhotoModal(${index})">
 <img src="${photo}"
 alt="Gallery Photo"
 class="w-full h-64 object-cover ${objectPosition} group-hover:scale-105 transition-transform duration-300">
 </div>
-</div>
 `;
 });
+wrapper.innerHTML = html;
+wrapper.className = 'flex overflow-x-auto pb-2';
+wrapper.style.scrollBehavior = 'smooth';
+wrapper.style.transform = 'none';
+slider.className = 'overflow-hidden w-full';
 } else {
 // Desktop: existing layout
+slider.className = 'overflow-hidden w-full';
 const horizontalPhotos = allGalleryPhotos.slice(0, 6);
 html += '<div class="w-full flex-shrink-0 flex justify-center gap-8">';
 for (let i = 0; i < 3; i++) {
@@ -918,11 +985,13 @@ class="w-full h-64 object-cover ${objectPosition} group-hover:scale-105 transiti
 `;
 });
 html += '</div>';
-}
 wrapper.innerHTML = html;
+wrapper.className = 'flex transition-transform duration-300 ease-in-out';
 wrapper.style.transform = 'translateX(0px)';
-const maxIndex = isMobile ? allGalleryPhotos.length - 1 : 2;
+currentGalleryIndex = 0;
+const maxIndex = 2;
 updateGalleryButtonStates(maxIndex);
+}
 }
 document.getElementById('videoModal').addEventListener('click', (e) => {
 if (e.target === document.getElementById('videoModal')) {
