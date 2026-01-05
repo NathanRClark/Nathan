@@ -80,7 +80,7 @@ overflow: hidden;
 </style>
 </head>
 <body class="font-['Lato'] text-gray-800 m-0 p-0 w-full overflow-x-hidden" id="top">
-<div id="resumeModal" class="fixed inset-0 bg-black/80 z-[60] hidden" style="height: 100vh; height: 100dvh;">
+<div id="resumeModal" class="fixed top-0 left-0 w-full bg-black/80 z-[60] hidden" style="height: 100vh; height: 100dvh;">
 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92%] max-w-sm md:max-w-4xl mx-auto bg-white rounded-lg md:rounded-lg shadow-xl h-[88%] md:h-[90vh] flex flex-col">
 <div class="flex justify-between items-center p-3 md:p-6 border-b flex-shrink-0">
 <h3 class="font-['Playfair_Display'] text-lg md:text-2xl font-bold">Resume</h3>
@@ -88,7 +88,7 @@ overflow: hidden;
 <i class="ri-close-line text-lg md:text-2xl"></i>
 </button>
 </div>
-<div class="p-3 md:p-6 overflow-y-auto text-sm md:text-base flex-1" style="-webkit-overflow-scrolling: touch;">
+<div class="p-3 md:p-6 overflow-y-scroll text-sm md:text-base flex-1 max-h-full" style="-webkit-overflow-scrolling: touch; overscroll-behavior: contain;">
 <div class="space-y-4 md:space-y-8">
 <div>
 <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4">Nathan Clark</h4>
