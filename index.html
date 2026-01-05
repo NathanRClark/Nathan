@@ -793,6 +793,14 @@ if (e.target === document.getElementById('resumeModal')) {
 closeResumeModal();
 }
 });
+
+// Prevent scrolling when resume modal is open on mobile
+document.addEventListener('touchmove', function(e) {
+const modal = document.getElementById('resumeModal');
+if (!modal.classList.contains('hidden')) {
+e.preventDefault();
+}
+}, { passive: false });
 let currentMediaIndex = 0;
 function slideMedia(direction) {
 const wrapper = document.getElementById('mediaWrapper');
