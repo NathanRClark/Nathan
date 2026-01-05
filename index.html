@@ -581,7 +581,7 @@ photoCounter.textContent = `${currentPhotoIndex + 1} / ${galleryPhotos.length}`;
 modal.classList.remove('hidden');
 document.body.style.overflow = 'hidden';
 document.addEventListener('keydown', handlePhotoKeyNavigation);
-maintainArrowOpacity();
+setTimeout(maintainArrowOpacity, 50);
 }
 function closePhotoModal() {
 const modal = document.getElementById('photoModal');
@@ -597,7 +597,7 @@ const photoFrame = document.getElementById('photoFrame');
 const photoCounter = document.getElementById('photoCounter');
 photoFrame.src = galleryPhotos[currentPhotoIndex];
 photoCounter.textContent = `${currentPhotoIndex + 1} / ${galleryPhotos.length}`;
-maintainArrowOpacity();
+setTimeout(maintainArrowOpacity, 50);
 }
 function previousPhoto() {
 currentPhotoIndex = (currentPhotoIndex - 1 + galleryPhotos.length) % galleryPhotos.length;
@@ -605,14 +605,16 @@ const photoFrame = document.getElementById('photoFrame');
 const photoCounter = document.getElementById('photoCounter');
 photoFrame.src = galleryPhotos[currentPhotoIndex];
 photoCounter.textContent = `${currentPhotoIndex + 1} / ${galleryPhotos.length}`;
-maintainArrowOpacity();
+setTimeout(maintainArrowOpacity, 50);
 }
 function maintainArrowOpacity() {
 const prevBtn = document.getElementById('prevPhotoBtn');
 const nextBtn = document.getElementById('nextPhotoBtn');
-if (window.innerWidth < 768) {
+if (window.innerWidth < 768 && prevBtn && nextBtn) {
 prevBtn.style.opacity = '0.7';
 nextBtn.style.opacity = '0.7';
+prevBtn.style.setProperty('opacity', '0.7', 'important');
+nextBtn.style.setProperty('opacity', '0.7', 'important');
 }
 }
 function handlePhotoKeyNavigation(event) {
