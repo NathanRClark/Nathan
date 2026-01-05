@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>Nathan Clark - Classical Tenor</title>
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -81,14 +81,14 @@ overflow: hidden;
 </head>
 <body class="font-['Lato'] text-gray-800" id="top">
 <div id="resumeModal" class="fixed inset-0 bg-black/80 z-50 hidden">
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl mx-4 bg-white rounded-lg shadow-xl">
-<div class="flex justify-between items-center p-6 border-b">
-<h3 class="font-['Playfair_Display'] text-2xl font-bold">Resume</h3>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl mx-2 md:mx-4 bg-white rounded-lg shadow-xl max-h-[95vh] md:max-h-auto">
+<div class="flex justify-between items-center p-3 md:p-6 border-b">
+<h3 class="font-['Playfair_Display'] text-xl md:text-2xl font-bold">Resume</h3>
 <button onclick="closeResumeModal()" class="text-gray-500 hover:text-gray-700">
-<i class="ri-close-line text-2xl"></i>
+<i class="ri-close-line text-xl md:text-2xl"></i>
 </button>
 </div>
-<div class="p-6 max-h-[70vh] overflow-y-auto">
+<div class="p-3 md:p-6 max-h-[80vh] md:max-h-[70vh] overflow-y-auto">
 <div class="space-y-8">
 <div>
 <h4 class="text-xl font-bold mb-4">Nathan Clark</h4>
@@ -189,7 +189,7 @@ overflow: hidden;
 </div>
 </div>
 <nav class="fixed w-full bg-transparent z-50 transition-all duration-300" id="navbar">
-<div class="container mx-auto px-6 py-4">
+<div class="container mx-auto px-4 sm:px-6 py-4">
 <div class="flex justify-between items-center">
 <a href="#" class="text-2xl font-['Playfair_Display'] font-bold text-primary">Nathan Clark</a>
 <div class="hidden md:flex space-x-8">
@@ -206,7 +206,7 @@ overflow: hidden;
 </div>
 </div>
 <div id="mobileMenu" class="hidden md:hidden bg-white w-full shadow-md">
-<div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+<div class="container mx-auto px-4 sm:px-6 py-4 flex flex-col space-y-4">
 <a href="#top" class="block py-2 font-medium">Home</a>
 <a href="#about" class="block py-2 font-medium">About</a>
 <a href="#performances" class="block py-2 font-medium">Performances</a>
@@ -227,7 +227,7 @@ overflow: hidden;
 </div>
 </section>
 <section id="about" class="py-24 bg-gray-50">
-<div class="container mx-auto px-6">
+<div class="container mx-auto px-4 sm:px-6">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
 <div class="md:col-span-5 order-2 md:order-1">
 <div class="rounded-lg overflow-hidden shadow-xl">
@@ -293,7 +293,7 @@ I believe in the strong connection between physical wellness and vocal performan
 </div>
 </section>
 <section id="media" class="py-24 bg-gray-50">
-<div class="container mx-auto px-6">
+<div class="container mx-auto px-4 sm:px-6">
 <h2 class="font-['Playfair_Display'] text-4xl font-bold mb-12 text-center">Media Gallery</h2>
 <div class="relative">
 <div class="overflow-hidden w-full" id="mediaSlider">
@@ -354,7 +354,7 @@ I believe in the strong connection between physical wellness and vocal performan
 </div>
 </div>
 <section id="contact" class="py-12 md:py-24 bg-gray-50">
-<div class="container mx-auto px-4 md:px-6">
+<div class="container mx-auto px-4 sm:px-6">
 <div class="max-w-2xl mx-auto text-center">
 <h2 class="font-['Playfair_Display'] text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8">Get in Touch</h2>
 <p class="text-base md:text-lg mb-8 md:mb-12">For booking inquiries, collaborations, or general questions, please don't hesitate to reach out.</p>
@@ -369,7 +369,7 @@ I believe in the strong connection between physical wellness and vocal performan
 </div>
 </section>
 <footer class="bg-primary text-white py-8 md:py-16">
-<div class="container mx-auto px-4 md:px-6">
+<div class="container mx-auto px-4 sm:px-6">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
 <div class="text-center md:text-left">
 <h3 class="font-['Playfair_Display'] text-lg md:text-xl font-bold mb-4 md:mb-6">Nathan Clark</h3>
