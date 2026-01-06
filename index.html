@@ -106,6 +106,23 @@ display: -webkit-box;
 -webkit-box-orient: vertical;
 overflow: hidden;
 }
+.hero-text-animate {
+opacity: 0;
+transform: translateY(30px);
+animation: fadeInUp 1s ease-out forwards;
+}
+.hero-text-animate-delay {
+animation-delay: 0.3s;
+}
+.hero-text-animate-delay-2 {
+animation-delay: 0.6s;
+}
+@keyframes fadeInUp {
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
 .scroll-animate {
 opacity: 0;
 transform: translateY(20px);
@@ -124,7 +141,7 @@ transition-delay: 0.4s;
 </style>
 </修改前>
 </head>
-<body class="font-['Lato'] text-gray-800 m-0 p-0 w-full overflow-x-hidden" id="top">
+<body class="font-['Lato'] text-gray-800 dark:text-gray-200 dark:bg-gray-900 m-0 p-0 w-full overflow-x-hidden" id="top">
 <div id="resumeModal" class="fixed inset-0 w-full h-full bg-black z-[9999] hidden" style="position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; width: 100vw !important; height: 100vh !important; min-height: 100vh !important; min-height: 100dvh !important; background-color: #000000 !important;">
 <div class="absolute top-0 left-0 w-full h-full md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-[95%] md:max-w-4xl md:mx-auto bg-white md:rounded-lg shadow-xl md:h-[90vh] flex flex-col">
 <div class="flex justify-between items-center p-4 md:p-6 border-b flex-shrink-0 bg-white">
@@ -250,14 +267,14 @@ transition-delay: 0.4s;
 </button>
 </div>
 </div>
-<div id="mobileMenu" class="hidden md:hidden bg-white w-full shadow-md">
+<div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-gray-800 w-full shadow-md">
 <div class="w-full px-4 sm:px-6 py-4 flex flex-col space-y-4">
-<a href="#top" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 px-2 -mx-2 rounded transition-all duration-200">Home</a>
-<a href="#about" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 px-2 -mx-2 rounded transition-all duration-200">About</a>
-<a href="#performances" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 px-2 -mx-2 rounded transition-all duration-200">Performances</a>
-<a href="#media" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 px-2 -mx-2 rounded transition-all duration-200">Media</a>
-<a href="#gallery" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 px-2 -mx-2 rounded transition-all duration-200">Photo Gallery</a>
-<a href="#contact" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 px-2 -mx-2 rounded transition-all duration-200">Contact</a>
+<a href="#top" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-700 dark:text-gray-200 px-2 -mx-2 rounded transition-all duration-200">Home</a>
+<a href="#about" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-700 dark:text-gray-200 px-2 -mx-2 rounded transition-all duration-200">About</a>
+<a href="#performances" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-700 dark:text-gray-200 px-2 -mx-2 rounded transition-all duration-200">Performances</a>
+<a href="#media" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-700 dark:text-gray-200 px-2 -mx-2 rounded transition-all duration-200">Media</a>
+<a href="#gallery" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-700 dark:text-gray-200 px-2 -mx-2 rounded transition-all duration-200">Photo Gallery</a>
+<a href="#contact" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-700 dark:text-gray-200 px-2 -mx-2 rounded transition-all duration-200">Contact</a>
 </div>
 </div>
 </nav>
@@ -265,32 +282,32 @@ transition-delay: 0.4s;
 <div class="absolute inset-0 bg-black/40"></div>
 <div class="w-full px-4 md:px-6 relative z-10 h-full flex items-center">
 <div class="max-w-2xl text-white">
-<h1 class="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-6xl font-bold mb-4 md:mb-6">Nathan Clark</h1>
-<p class="text-lg sm:text-xl md:text-2xl font-light mb-6 md:mb-8">Tenor | Classical Vocalist | Performer</p>
-<a href="#contact" class="bg-secondary hover:bg-secondary/90 text-white px-6 md:px-8 py-3 rounded-button inline-block transition-all cursor-pointer">Book Now</a>
+<h1 class="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-6xl font-bold mb-4 md:mb-6 hero-text-animate">Nathan Clark</h1>
+<p class="text-lg sm:text-xl md:text-2xl font-light mb-6 md:mb-8 hero-text-animate hero-text-animate-delay">Tenor | Classical Vocalist | Performer</p>
+<a href="#contact" class="bg-secondary hover:bg-secondary/90 text-white px-6 md:px-8 py-3 rounded-button inline-block transition-all cursor-pointer hero-text-animate hero-text-animate-delay-2">Book Now</a>
 </div>
 </div>
 </section>
-<section id="about" class="py-24 bg-gray-50">
+<section id="about" class="py-24 bg-gray-50 dark:bg-gray-800">
 <div class="w-full px-4 sm:px-6">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
 <div class="md:col-span-5 order-2 md:order-1">
-<div class="rounded-lg overflow-hidden shadow-xl scroll-animate">
+<div class="rounded-lg overflow-hidden shadow-xl">
 <img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/397833758708dbe6b0522b6b3e2d0462.jpeg"
 alt="Nathan Clark"
 class="w-full h-full object-cover">
 </div>
 </div>
 <div class="md:col-span-7 order-1 md:order-2">
-<h2 class="font-['Playfair_Display'] text-4xl font-bold mb-8 scroll-animate">About Me</h2>
+<h2 class="font-['Playfair_Display'] text-4xl font-bold mb-8 scroll-animate dark:text-white">About Me</h2>
 <div class="md:hidden mb-6">
 <a href="#" onclick="openResumeModal()" class="bg-secondary hover:bg-secondary/90 text-white px-6 py-2 rounded-button inline-flex items-center justify-center whitespace-nowrap">
 <i class="ri-file-text-line mr-2"></i>
 View Resume
 </a>
 </div>
-<div class="space-y-6 text-lg leading-relaxed">
-<div class="flex flex-col md:flex-row md:justify-between md:items-center mb-6 scroll-animate scroll-animate-delay">
+<div class="space-y-6 text-lg leading-relaxed dark:text-gray-300">
+<div class="flex flex-col md:flex-row md:justify-between md:items-center mb-6">
 <p class="flex-1 mb-4 md:mb-0">
 I am a tenor and classical vocalist studying Vocal Performance at Baylor University, passionate about bringing classical music to life through expressive performances and meaningful connections with audiences.
 </p>
@@ -299,16 +316,16 @@ I am a tenor and classical vocalist studying Vocal Performance at Baylor Univers
 View Resume
 </a>
 </div>
-<p class="scroll-animate scroll-animate-delay">
+<p>
 At Baylor, I am a proud member of Baylor A Cappella, Chamber Singers, and Baylor Opera. With Baylor Opera, I performed in our recent production of Notes on Viardot as an ensemble member and one of the Bandits, and I will be part of our upcoming production of L'Orfeo as an ensemble member and part of the Pastori. Earlier this year, I performed with Baylor Opera at the National Opera Conference in Boston and presented my poster, representing the program on a national stage.
 </p>
-<p class="scroll-animate scroll-animate-delay-2">
+<p>
 I study under Dr. Mark Diamond and also receive coachings from Dr. Jeffrey Peterson, refining my technique and expanding my vocal artistry.
 </p>
-<p class="scroll-animate scroll-animate-delay">
+<p>
 Beyond the university, I serve in the music ministry at St. Louis Catholic Church, where I continue to combine my love for music with my faith. One of my most transformative experiences was touring with the St. Paul Choral Scholars across Austria, performing in historic cathedrals including Salzburg Cathedral and St. Stephen's Cathedral in Vienna, which deepened my appreciation for sacred music and its rich cultural heritage.
 </p>
-<p class="scroll-animate scroll-animate-delay-2">
+<p>
 When I'm not performing or practicing, you'll find me pursuing my passion for physical fitness,
 whether that's at the gym, engaging in sports, or challenging myself to reach new personal bests.
 I believe in the strong connection between physical wellness and vocal performance.
@@ -318,10 +335,10 @@ I believe in the strong connection between physical wellness and vocal performan
 </div>
 </div>
 </section>
-<section id="performances" class="py-12 md:py-24">
+<section id="performances" class="py-12 md:py-24 dark:bg-gray-900">
 <div class="w-full px-4 md:px-6">
 <div class="text-center mb-8 md:mb-12">
-<h2 class="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-bold scroll-animate">Performances</h2>
+<h2 class="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-bold scroll-animate dark:text-white">Performances</h2>
 </div>
 <div class="relative">
 <div class="overflow-hidden w-full" id="performancesSlider">
@@ -337,9 +354,9 @@ I believe in the strong connection between physical wellness and vocal performan
 </div>
 </div>
 </section>
-<section id="media" class="py-24 bg-gray-50">
+<section id="media" class="py-24 bg-gray-50 dark:bg-gray-800">
 <div class="w-full px-4 sm:px-6">
-<h2 class="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center scroll-animate">Media Gallery</h2>
+<h2 class="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center scroll-animate dark:text-white">Media Gallery</h2>
 <div class="relative">
 <div class="overflow-hidden w-full" id="mediaSlider">
 <div class="flex transition-transform duration-300 ease-in-out justify-between" id="mediaWrapper">
@@ -364,9 +381,9 @@ I believe in the strong connection between physical wellness and vocal performan
 </div>
 </div>
 </section>
-<section id="gallery" class="py-12 md:py-24">
+<section id="gallery" class="py-12 md:py-24 dark:bg-gray-900">
 <div class="w-full px-4 md:px-6">
-<h2 class="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-bold mb-8 md:mb-12 text-center scroll-animate">Photo Gallery</h2>
+<h2 class="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-bold mb-8 md:mb-12 text-center scroll-animate dark:text-white">Photo Gallery</h2>
 <div class="relative">
 <div class="overflow-hidden w-full" id="gallerySlider">
 <div class="flex transition-transform duration-300 ease-in-out justify-between" id="galleryWrapper">
@@ -398,15 +415,15 @@ I believe in the strong connection between physical wellness and vocal performan
 </div>
 </div>
 </div>
-<section id="contact" class="py-12 md:py-24 bg-gray-50">
+<section id="contact" class="py-12 md:py-24 bg-gray-50 dark:bg-gray-800">
 <div class="w-full px-4 sm:px-6">
 <div class="max-w-2xl mx-auto text-center">
-<h2 class="font-['Playfair_Display'] text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8 scroll-animate">Get in Touch</h2>
-<p class="text-base md:text-lg mb-8 md:mb-12 scroll-animate scroll-animate-delay">For booking inquiries, collaborations, or general questions, please don't hesitate to reach out.</p>
+<h2 class="font-['Playfair_Display'] text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8 scroll-animate dark:text-white">Get in Touch</h2>
+<p class="text-base md:text-lg mb-8 md:mb-12 scroll-animate scroll-animate-delay dark:text-gray-300">For booking inquiries, collaborations, or general questions, please don't hesitate to reach out.</p>
 <form class="space-y-4 md:space-y-6 scroll-animate scroll-animate-delay-2" id="contactForm">
-<input type="text" name="name" placeholder="Name" required class="w-full px-4 py-3 rounded border border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary text-base">
-<input type="email" name="email" placeholder="Email" required class="w-full px-4 py-3 rounded border border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary text-base">
-<textarea name="message" placeholder="Message" rows="5" required class="w-full px-4 py-3 rounded border border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary resize-none text-base"></textarea>
+<input type="text" name="name" placeholder="Name" required class="w-full px-4 py-3 rounded border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 focus:border-secondary focus:ring-1 focus:ring-secondary text-base">
+<input type="email" name="email" placeholder="Email" required class="w-full px-4 py-3 rounded border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 focus:border-secondary focus:ring-1 focus:ring-secondary text-base">
+<textarea name="message" placeholder="Message" rows="5" required class="w-full px-4 py-3 rounded border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 focus:border-secondary focus:ring-1 focus:ring-secondary resize-none text-base"></textarea>
 <button type="submit" class="bg-primary hover:bg-primary/90 text-white px-6 md:px-8 py-3 rounded-button transition-all cursor-pointer text-base whitespace-nowrap">Send Message</button>
 </form>
 <div id="formStatus" class="mt-4 text-center hidden"></div>
@@ -1177,7 +1194,6 @@ const observerOptions = {
 threshold: 0.1,
 rootMargin: '0px 0px -50px 0px'
 };
-
 const observer = new IntersectionObserver((entries) => {
 entries.forEach((entry) => {
 if (entry.isIntersecting) {
@@ -1186,17 +1202,14 @@ observer.unobserve(entry.target);
 }
 });
 }, observerOptions);
-
 const animateElements = document.querySelectorAll('.scroll-animate');
 animateElements.forEach((el) => {
 observer.observe(el);
 });
 }
-
 document.addEventListener('DOMContentLoaded', function() {
 // Initialize scroll animations
 initScrollAnimations();
-
 // Initialize performance data
 renderPerformances();
 // Initialize media slider
