@@ -3,7 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Nathan Clark - Classical Tenor</title>
+<title>Nathan Clark | Tenor</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23c9a55c'/%3E%3Ctext x='50' y='58' font-family='serif' font-size='28' font-weight='bold' text-anchor='middle' fill='white'%3ENC%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Nathan Clark is a Texas-based tenor specializing in operatic, concert, and sacred repertoire, with experience in opera chorus, solo performance, and ensemble singing.">
+<meta name="keywords" content="tenor, operatic tenor, classical singer, opera singer, vocal performance, sacred music, concert singer">
+<meta property="og:title" content="Nathan Clark | Tenor">
+<meta property="og:description" content="Nathan Clark is a Texas-based tenor specializing in operatic, concert, and sacred repertoire, with experience in opera chorus, solo performance, and ensemble singing.">
+<meta property="og:image" content="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/bddd360e8c557ddb234aaa8a39c0f586.jpeg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nathan Clark | Tenor">
+<meta name="twitter:description" content="Nathan Clark is a Texas-based tenor specializing in operatic, concert, and sacred repertoire, with experience in opera chorus, solo performance, and ensemble singing.">
+<meta name="twitter:image" content="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/bddd360e8c557ddb234aaa8a39c0f586.jpeg">
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
@@ -44,6 +55,10 @@ DEFAULT: '8px',
 :where([class^="ri-"])::before { content: "\f3c2"; }
 .nav-link {
 position: relative;
+transition: color 0.2s ease, opacity 0.2s ease;
+}
+.nav-link:hover {
+opacity: 0.8;
 }
 .nav-link::after {
 content: '';
@@ -91,29 +106,45 @@ display: -webkit-box;
 -webkit-box-orient: vertical;
 overflow: hidden;
 }
+.scroll-animate {
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.scroll-animate.animate {
+opacity: 1;
+transform: translateY(0);
+}
+.scroll-animate-delay {
+transition-delay: 0.2s;
+}
+.scroll-animate-delay-2 {
+transition-delay: 0.4s;
+}
 </style>
+</修改前>
 </head>
 <body class="font-['Lato'] text-gray-800 m-0 p-0 w-full overflow-x-hidden" id="top">
 <div id="resumeModal" class="fixed inset-0 w-full h-full bg-black z-[9999] hidden" style="position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; width: 100vw !important; height: 100vh !important; min-height: 100vh !important; min-height: 100dvh !important; background-color: #000000 !important;">
 <div class="absolute top-0 left-0 w-full h-full md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-[95%] md:max-w-4xl md:mx-auto bg-white md:rounded-lg shadow-xl md:h-[90vh] flex flex-col">
 <div class="flex justify-between items-center p-4 md:p-6 border-b flex-shrink-0 bg-white">
-<h3 class="font-['Playfair_Display'] text-xl md:text-2xl font-bold">Resume</h3>
+<h2 class="font-['Playfair_Display'] text-xl md:text-2xl font-bold">Resume</h2>
 <button onclick="closeResumeModal()" class="text-gray-500 hover:text-gray-700 w-8 h-8 md:w-auto md:h-auto flex items-center justify-center">
 <i class="ri-close-line text-xl md:text-2xl"></i>
 </button>
 </div>
-<div class="p-4 md:p-6 overflow-y-auto text-sm md:text-base flex-1 overscroll-contain bg-white" style="-webkit-overflow-scrolling: touch; height: calc(100vh - 80px);">
+<div class="p-4 md:p-6 overflow-y-auto text-sm md:text-base flex-1 overscroll-contain bg-white" style="-webkit-overflow-scrolling: touch; height: calc(100vh - 80px); padding-bottom: 120px;">
 <div class="space-y-4 md:space-y-8">
 <div>
-<h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4">Nathan Clark</h4>
+<h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4">Nathan Clark</h3>
 <div class="mb-4 md:mb-6">
-<h5 class="text-base md:text-lg font-bold mb-1 md:mb-2">SUMMARY</h5>
+<h4 class="text-base md:text-lg font-bold mb-1 md:mb-2">SUMMARY</h4>
 <p class="text-xs md:text-base leading-tight md:leading-normal">Gifted singer and dedicated undergraduate student. Dedicated musician willing to collaborate with other professionals or perform in solo roles. Remains focused and poised in fast-paced settings.</p>
 <p class="mt-1 md:mt-2 text-xs md:text-base">📧 Email: nrossclark@gmail.com</p>
 </div>
 </div>
 <div>
-<h5 class="text-base md:text-lg font-bold mb-1 md:mb-2">KEY SKILLS</h5>
+<h4 class="text-base md:text-lg font-bold mb-1 md:mb-2">KEY SKILLS</h4>
 <div class="grid grid-cols-2 gap-1 md:gap-2 text-xs md:text-base">
 <div>Collaboration</div>
 <div>Analytical Thinking</div>
@@ -126,7 +157,7 @@ overflow: hidden;
 </div>
 </div>
 <div>
-<h5 class="text-base md:text-lg font-bold mb-1 md:mb-2">EXPERIENCE</h5>
+<h4 class="text-base md:text-lg font-bold mb-1 md:mb-2">EXPERIENCE</h4>
 <div class="space-y-2 md:space-y-4">
 <div>
 <p class="font-bold text-xs md:text-base leading-tight">Vocal Performance Major | Baylor University (August 2024 - Present)</p>
@@ -177,7 +208,7 @@ overflow: hidden;
 </div>
 </div>
 <div>
-<h5 class="text-base md:text-lg font-bold mb-1 md:mb-2">AWARDS</h5>
+<h4 class="text-base md:text-lg font-bold mb-1 md:mb-2">AWARDS</h4>
 <div class="space-y-1 md:space-y-2 text-xs md:text-base leading-tight md:leading-normal">
 <p>Bay Area Chorus Ralph & Richard Parr Music Excellence Winner (2024)</p>
 <p>2nd Place – HGO Bauer Family High School Voice Studio Recital (2024)</p>
@@ -185,7 +216,7 @@ overflow: hidden;
 </div>
 </div>
 <div>
-<h5 class="text-base md:text-lg font-bold mb-1 md:mb-2">EDUCATION</h5>
+<h4 class="text-base md:text-lg font-bold mb-1 md:mb-2">EDUCATION</h4>
 <div class="space-y-2 md:space-y-4">
 <div>
 <p class="font-bold text-xs md:text-base leading-tight">Clear Creek High School | League City, TX</p>
@@ -205,7 +236,7 @@ overflow: hidden;
 <nav class="fixed w-full bg-transparent z-50 transition-all duration-300" id="navbar">
 <div class="w-full max-w-none px-4 sm:px-6 py-4">
 <div class="flex justify-between items-center">
-<a href="#" class="text-2xl font-['Playfair_Display'] font-bold text-primary">Nathan Clark</a>
+<span class="text-2xl font-['Playfair_Display'] font-bold text-primary">Nathan Clark</span>
 <div class="hidden md:flex space-x-8">
 <a href="#top" class="nav-link font-medium">Home</a>
 <a href="#about" class="nav-link font-medium">About</a>
@@ -221,12 +252,12 @@ overflow: hidden;
 </div>
 <div id="mobileMenu" class="hidden md:hidden bg-white w-full shadow-md">
 <div class="w-full px-4 sm:px-6 py-4 flex flex-col space-y-4">
-<a href="#top" class="block py-2 font-medium">Home</a>
-<a href="#about" class="block py-2 font-medium">About</a>
-<a href="#performances" class="block py-2 font-medium">Performances</a>
-<a href="#media" class="block py-2 font-medium">Media</a>
-<a href="#gallery" class="block py-2 font-medium">Photo Gallery</a>
-<a href="#contact" class="block py-2 font-medium">Contact</a>
+<a href="#top" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 px-2 -mx-2 rounded transition-all duration-200">Home</a>
+<a href="#about" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 px-2 -mx-2 rounded transition-all duration-200">About</a>
+<a href="#performances" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 px-2 -mx-2 rounded transition-all duration-200">Performances</a>
+<a href="#media" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 px-2 -mx-2 rounded transition-all duration-200">Media</a>
+<a href="#gallery" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 px-2 -mx-2 rounded transition-all duration-200">Photo Gallery</a>
+<a href="#contact" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 px-2 -mx-2 rounded transition-all duration-200">Contact</a>
 </div>
 </div>
 </nav>
@@ -244,14 +275,14 @@ overflow: hidden;
 <div class="w-full px-4 sm:px-6">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
 <div class="md:col-span-5 order-2 md:order-1">
-<div class="rounded-lg overflow-hidden shadow-xl">
+<div class="rounded-lg overflow-hidden shadow-xl scroll-animate">
 <img src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/397833758708dbe6b0522b6b3e2d0462.jpeg"
 alt="Nathan Clark"
 class="w-full h-full object-cover">
 </div>
 </div>
 <div class="md:col-span-7 order-1 md:order-2">
-<h2 class="font-['Playfair_Display'] text-4xl font-bold mb-8">About Me</h2>
+<h2 class="font-['Playfair_Display'] text-4xl font-bold mb-8 scroll-animate">About Me</h2>
 <div class="md:hidden mb-6">
 <a href="#" onclick="openResumeModal()" class="bg-secondary hover:bg-secondary/90 text-white px-6 py-2 rounded-button inline-flex items-center justify-center whitespace-nowrap">
 <i class="ri-file-text-line mr-2"></i>
@@ -259,7 +290,7 @@ View Resume
 </a>
 </div>
 <div class="space-y-6 text-lg leading-relaxed">
-<div class="flex flex-col md:flex-row md:justify-between md:items-center mb-6">
+<div class="flex flex-col md:flex-row md:justify-between md:items-center mb-6 scroll-animate scroll-animate-delay">
 <p class="flex-1 mb-4 md:mb-0">
 I am a tenor and classical vocalist studying Vocal Performance at Baylor University, passionate about bringing classical music to life through expressive performances and meaningful connections with audiences.
 </p>
@@ -268,16 +299,16 @@ I am a tenor and classical vocalist studying Vocal Performance at Baylor Univers
 View Resume
 </a>
 </div>
-<p>
+<p class="scroll-animate scroll-animate-delay">
 At Baylor, I am a proud member of Baylor A Cappella, Chamber Singers, and Baylor Opera. With Baylor Opera, I performed in our recent production of Notes on Viardot as an ensemble member and one of the Bandits, and I will be part of our upcoming production of L'Orfeo as an ensemble member and part of the Pastori. Earlier this year, I performed with Baylor Opera at the National Opera Conference in Boston and presented my poster, representing the program on a national stage.
 </p>
-<p>
+<p class="scroll-animate scroll-animate-delay-2">
 I study under Dr. Mark Diamond and also receive coachings from Dr. Jeffrey Peterson, refining my technique and expanding my vocal artistry.
 </p>
-<p>
+<p class="scroll-animate scroll-animate-delay">
 Beyond the university, I serve in the music ministry at St. Louis Catholic Church, where I continue to combine my love for music with my faith. One of my most transformative experiences was touring with the St. Paul Choral Scholars across Austria, performing in historic cathedrals including Salzburg Cathedral and St. Stephen's Cathedral in Vienna, which deepened my appreciation for sacred music and its rich cultural heritage.
 </p>
-<p>
+<p class="scroll-animate scroll-animate-delay-2">
 When I'm not performing or practicing, you'll find me pursuing my passion for physical fitness,
 whether that's at the gym, engaging in sports, or challenging myself to reach new personal bests.
 I believe in the strong connection between physical wellness and vocal performance.
@@ -290,7 +321,7 @@ I believe in the strong connection between physical wellness and vocal performan
 <section id="performances" class="py-12 md:py-24">
 <div class="w-full px-4 md:px-6">
 <div class="text-center mb-8 md:mb-12">
-<h2 class="font-['Playfair_Display'] text-2xl sm:text-3xl md:text-4xl font-bold">Performances</h2>
+<h2 class="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-bold scroll-animate">Performances</h2>
 </div>
 <div class="relative">
 <div class="overflow-hidden w-full" id="performancesSlider">
@@ -308,7 +339,7 @@ I believe in the strong connection between physical wellness and vocal performan
 </section>
 <section id="media" class="py-24 bg-gray-50">
 <div class="w-full px-4 sm:px-6">
-<h2 class="font-['Playfair_Display'] text-4xl font-bold mb-12 text-center">Media Gallery</h2>
+<h2 class="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center scroll-animate">Media Gallery</h2>
 <div class="relative">
 <div class="overflow-hidden w-full" id="mediaSlider">
 <div class="flex transition-transform duration-300 ease-in-out justify-between" id="mediaWrapper">
@@ -335,7 +366,7 @@ I believe in the strong connection between physical wellness and vocal performan
 </section>
 <section id="gallery" class="py-12 md:py-24">
 <div class="w-full px-4 md:px-6">
-<h2 class="font-['Playfair_Display'] text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center">Photo Gallery</h2>
+<h2 class="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-bold mb-8 md:mb-12 text-center scroll-animate">Photo Gallery</h2>
 <div class="relative">
 <div class="overflow-hidden w-full" id="gallerySlider">
 <div class="flex transition-transform duration-300 ease-in-out justify-between" id="galleryWrapper">
@@ -370,9 +401,9 @@ I believe in the strong connection between physical wellness and vocal performan
 <section id="contact" class="py-12 md:py-24 bg-gray-50">
 <div class="w-full px-4 sm:px-6">
 <div class="max-w-2xl mx-auto text-center">
-<h2 class="font-['Playfair_Display'] text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8">Get in Touch</h2>
-<p class="text-base md:text-lg mb-8 md:mb-12">For booking inquiries, collaborations, or general questions, please don't hesitate to reach out.</p>
-<form class="space-y-4 md:space-y-6" id="contactForm">
+<h2 class="font-['Playfair_Display'] text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8 scroll-animate">Get in Touch</h2>
+<p class="text-base md:text-lg mb-8 md:mb-12 scroll-animate scroll-animate-delay">For booking inquiries, collaborations, or general questions, please don't hesitate to reach out.</p>
+<form class="space-y-4 md:space-y-6 scroll-animate scroll-animate-delay-2" id="contactForm">
 <input type="text" name="name" placeholder="Name" required class="w-full px-4 py-3 rounded border border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary text-base">
 <input type="email" name="email" placeholder="Email" required class="w-full px-4 py-3 rounded border border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary text-base">
 <textarea name="message" placeholder="Message" rows="5" required class="w-full px-4 py-3 rounded border border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary resize-none text-base"></textarea>
@@ -744,7 +775,7 @@ if (isMobile) {
 let html = '';
 allPerformances.forEach(performance => {
 html += `
-<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex-shrink-0 w-64 mr-4">
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex-shrink-0 w-64 mr-4 mb-4">
 <img src="${performance.image}"
 alt="${performance.title}"
 class="w-full h-40 object-cover">
@@ -906,7 +937,7 @@ if (isMobile) {
 let html = '';
 allMediaItems.forEach(item => {
 html += `
-<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer flex-shrink-0 w-72 mr-4" onclick="openVideoModal('${item.videoUrl}')">
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer flex-shrink-0 w-72 mr-4 mb-4" onclick="openVideoModal('${item.videoUrl}')">
 <div class="relative">
 <img src="${item.image}"
 alt="${item.title}"
@@ -983,7 +1014,7 @@ objectPosition = 'object-[center_25%]';
 objectPosition = 'object-center';
 }
 html += `
-<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer flex-shrink-0 w-64 mr-4" onclick="openPhotoModal(${index})">
+<div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer flex-shrink-0 w-64 mr-4 mb-4" onclick="openPhotoModal(${index})">
 <img src="${photo}"
 alt="Gallery Photo"
 class="w-full h-64 object-cover ${objectPosition} group-hover:scale-105 transition-transform duration-300">
@@ -1064,8 +1095,108 @@ if (e.target === document.getElementById('photoModal')) {
 closePhotoModal();
 }
 });
+// Keyboard navigation for sliders
+document.addEventListener('keydown', function(e) {
+// Only handle keyboard navigation if no modals are open
+const resumeModal = document.getElementById('resumeModal');
+const videoModal = document.getElementById('videoModal');
+const photoModal = document.getElementById('photoModal');
+if (!resumeModal.classList.contains('hidden') ||
+!videoModal.classList.contains('hidden') ||
+!photoModal.classList.contains('hidden')) {
+return;
+}
+// Check if we're in an input field
+if (document.activeElement && (
+document.activeElement.tagName === 'INPUT' ||
+document.activeElement.tagName === 'TEXTAREA'
+)) {
+return;
+}
+// Determine which section is currently in view
+const sections = [
+{ id: 'performances', prevKey: 'q', nextKey: 'w' },
+{ id: 'media', prevKey: 'a', nextKey: 's' },
+{ id: 'gallery', prevKey: 'z', nextKey: 'x' }
+];
+const currentSection = sections.find(section => {
+const element = document.getElementById(section.id);
+const rect = element.getBoundingClientRect();
+return rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
+});
+if (currentSection) {
+if (e.key.toLowerCase() === currentSection.prevKey) {
+e.preventDefault();
+if (currentSection.id === 'performances') {
+slidePerformances('prev');
+} else if (currentSection.id === 'media') {
+slideMedia('prev');
+} else if (currentSection.id === 'gallery') {
+slideGallery('prev');
+}
+} else if (e.key.toLowerCase() === currentSection.nextKey) {
+e.preventDefault();
+if (currentSection.id === 'performances') {
+slidePerformances('next');
+} else if (currentSection.id === 'media') {
+slideMedia('next');
+} else if (currentSection.id === 'gallery') {
+slideGallery('next');
+}
+}
+}
+// Global arrow key navigation for all sliders
+if (e.key === 'ArrowLeft' && e.ctrlKey) {
+e.preventDefault();
+if (currentSection) {
+if (currentSection.id === 'performances') {
+slidePerformances('prev');
+} else if (currentSection.id === 'media') {
+slideMedia('prev');
+} else if (currentSection.id === 'gallery') {
+slideGallery('prev');
+}
+}
+} else if (e.key === 'ArrowRight' && e.ctrlKey) {
+e.preventDefault();
+if (currentSection) {
+if (currentSection.id === 'performances') {
+slidePerformances('next');
+} else if (currentSection.id === 'media') {
+slideMedia('next');
+} else if (currentSection.id === 'gallery') {
+slideGallery('next');
+}
+}
+}
+});
 // Initialize slider button states on page load
+// Scroll animation observer
+function initScrollAnimations() {
+const observerOptions = {
+threshold: 0.1,
+rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
+if (entry.isIntersecting) {
+entry.target.classList.add('animate');
+observer.unobserve(entry.target);
+}
+});
+}, observerOptions);
+
+const animateElements = document.querySelectorAll('.scroll-animate');
+animateElements.forEach((el) => {
+observer.observe(el);
+});
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+// Initialize scroll animations
+initScrollAnimations();
+
 // Initialize performance data
 renderPerformances();
 // Initialize media slider
