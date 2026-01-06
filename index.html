@@ -71,6 +71,20 @@ background-size: cover;
 background-attachment: scroll;
 }
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+.hero-section {
+background-position: center 20%;
+background-size: cover;
+background-attachment: scroll;
+}
+}
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+.hero-section {
+background-position: center 15%;
+background-size: cover;
+background-attachment: scroll;
+}
+}
 .line-clamp-2 {
 display: -webkit-box;
 -webkit-line-clamp: 2;
@@ -80,7 +94,7 @@ overflow: hidden;
 </style>
 </head>
 <body class="font-['Lato'] text-gray-800 m-0 p-0 w-full overflow-x-hidden" id="top">
-<div id="resumeModal" class="fixed inset-0 w-full h-full bg-black/80 z-[60] hidden" style="min-height: 100vh; min-height: 100dvh;">
+<div id="resumeModal" class="fixed inset-0 w-full h-full bg-black z-[60] hidden" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100vw; height: 100vh; min-height: 100vh; min-height: 100dvh;">
 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92%] max-w-sm md:max-w-4xl mx-auto bg-white rounded-lg md:rounded-lg shadow-xl h-[88%] md:h-[90vh] flex flex-col">
 <div class="flex justify-between items-center p-3 md:p-6 border-b flex-shrink-0">
 <h3 class="font-['Playfair_Display'] text-lg md:text-2xl font-bold">Resume</h3>
@@ -88,7 +102,7 @@ overflow: hidden;
 <i class="ri-close-line text-lg md:text-2xl"></i>
 </button>
 </div>
-<div class="p-3 md:p-6 overflow-y-auto text-sm md:text-base flex-1" style="-webkit-overflow-scrolling: touch; overscroll-behavior: contain; height: 1px; min-height: 0;">
+<div class="p-3 md:p-6 overflow-y-auto text-sm md:text-base flex-1 overscroll-contain" style="-webkit-overflow-scrolling: touch;">
 <div class="space-y-4 md:space-y-8">
 <div>
 <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4">Nathan Clark</h4>
@@ -806,11 +820,15 @@ closeResumeModal();
 }
 }
 });
-// Prevent scrolling when resume modal is open on mobile
+// Prevent body scrolling when resume modal is open, but allow modal content scrolling
 document.addEventListener('touchmove', function(e) {
 const modal = document.getElementById('resumeModal');
 if (!modal.classList.contains('hidden')) {
+// Only prevent scrolling if the touch is not on the scrollable content area
+const scrollableArea = modal.querySelector('.overflow-y-auto');
+if (!scrollableArea.contains(e.target)) {
 e.preventDefault();
+}
 }
 }, { passive: false });
 let currentMediaIndex = 0;
