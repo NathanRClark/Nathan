@@ -99,6 +99,23 @@ color: white !important;
 .dark #navbar.bg-white\/95 button {
 color: white !important;
 }
+/* Additional dark mode navbar fixes */
+.dark #navbar .text-primary {
+color: white !important;
+}
+.dark #navbar .text-gray-800 {
+color: white !important;
+}
+body.dark #navbar span,
+body.dark #navbar .nav-link,
+body.dark #navbar button {
+color: white !important;
+}
+body.dark #navbar.bg-white\/95 span,
+body.dark #navbar.bg-white\/95 .nav-link,
+body.dark #navbar.bg-white\/95 button {
+color: white !important;
+}
 .nav-link::after {
 content: '';
 position: absolute;
@@ -136,8 +153,8 @@ background-color: #1a1a1a;
 }
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 .hero-section {
-background-position: center center;
-background-size: cover;
+background-position: center top;
+background-size: contain;
 background-repeat: no-repeat;
 background-attachment: scroll;
 background-color: #1a1a1a;
