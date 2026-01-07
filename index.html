@@ -176,11 +176,34 @@ background-color: #1a1a1a;
 #performancesWrapper > div,
 #mediaWrapper > div,
 #galleryWrapper > div {
-gap: 1rem !important;
+gap: 0.75rem !important;
 }
 #performancesWrapper .w-96,
-#mediaWrapper .w-96 {
-width: 280px !important;
+#mediaWrapper .w-96,
+#galleryWrapper .w-96 {
+width: 240px !important;
+max-width: 240px !important;
+}
+#performancesWrapper .w-80,
+#mediaWrapper .w-80 {
+width: 240px !important;
+max-width: 240px !important;
+}
+}
+/* Tablet portrait specific adjustments */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+#performancesWrapper > div,
+#mediaWrapper > div,
+#galleryWrapper > div {
+gap: 0.5rem !important;
+}
+#performancesWrapper .w-96,
+#mediaWrapper .w-96,
+#galleryWrapper .w-96,
+#performancesWrapper .w-80,
+#mediaWrapper .w-80 {
+width: 220px !important;
+max-width: 220px !important;
 }
 }
 .line-clamp-2 {
@@ -897,14 +920,14 @@ slider.className = 'overflow-hidden w-full';
 } else {
 // Desktop and Tablet: existing slider behavior
 slider.className = 'overflow-hidden w-full';
-const visibleItems = isTablet ? 2 : 3;
+const visibleItems = 3; // Always show 3 items for both desktop and tablet
 const totalSets = Math.ceil(allPerformances.length / visibleItems);
 let html = '';
 for (let set = 0; set < totalSets; set++) {
 const startIndex = set * visibleItems;
 const endIndex = Math.min(startIndex + visibleItems, allPerformances.length);
 const setPerformances = allPerformances.slice(startIndex, endIndex);
-html += `<div class="w-full flex-shrink-0 flex justify-center ${isTablet ? 'gap-4' : 'gap-8'}">`;
+html += `<div class="w-full flex-shrink-0 flex justify-center ${isTablet ? 'gap-3' : 'gap-8'}">`;
 setPerformances.forEach(performance => {
 html += `
 <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex-shrink-0 ${isTablet ? 'w-80' : 'w-96'}">
@@ -1064,14 +1087,14 @@ slider.className = 'overflow-hidden w-full';
 } else {
 // Desktop and Tablet: existing slider behavior
 slider.className = 'overflow-hidden w-full';
-const visibleItems = isTablet ? 2 : 3;
+const visibleItems = 3; // Always show 3 items for both desktop and tablet
 const totalSets = Math.ceil(allMediaItems.length / visibleItems);
 let html = '';
 for (let set = 0; set < totalSets; set++) {
 const startIndex = set * visibleItems;
 const endIndex = Math.min(startIndex + visibleItems, allMediaItems.length);
 const setItems = allMediaItems.slice(startIndex, endIndex);
-html += `<div class="w-full flex-shrink-0 flex justify-center ${isTablet ? 'gap-4' : 'gap-8'}">`;
+html += `<div class="w-full flex-shrink-0 flex justify-center ${isTablet ? 'gap-3' : 'gap-8'}">`;
 setItems.forEach(item => {
 html += `
 <div class="bg-white dark:bg-gray-900 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer flex-shrink-0 ${isTablet ? 'w-80' : 'w-96'}" onclick="openVideoModal('${item.videoUrl}')">
