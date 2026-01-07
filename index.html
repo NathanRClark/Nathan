@@ -53,12 +53,79 @@ DEFAULT: '8px',
 </script>
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+background-image:
+radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0);
+background-size: 20px 20px;
+position: relative;
+}
+body::before {
+content: '';
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image:
+linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.02) 25%, rgba(255,255,255,0.02) 50%, transparent 50%, transparent 75%, rgba(255,255,255,0.02) 75%),
+radial-gradient(circle at 25% 25%, rgba(255,255,255,0.03) 2px, transparent 2px),
+radial-gradient(circle at 75% 75%, rgba(0,0,0,0.02) 1px, transparent 1px);
+background-size: 40px 40px, 60px 60px, 30px 30px;
+pointer-events: none;
+z-index: -1;
+opacity: 0.3;
+}
+body.dark::before {
+background-image:
+linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.01) 25%, rgba(255,255,255,0.01) 50%, transparent 50%, transparent 75%, rgba(255,255,255,0.01) 75%),
+radial-gradient(circle at 25% 25%, rgba(255,255,255,0.015) 2px, transparent 2px),
+radial-gradient(circle at 75% 75%, rgba(255,255,255,0.01) 1px, transparent 1px);
+background-size: 40px 40px, 60px 60px, 30px 30px;
+opacity: 0.4;
+}
+.texture-overlay {
+position: relative;
+}
+.texture-overlay::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-image:
+radial-gradient(circle at 20% 80%, rgba(255,255,255,0.05) 1px, transparent 1px),
+radial-gradient(circle at 80% 20%, rgba(0,0,0,0.02) 1px, transparent 1px),
+linear-gradient(90deg, transparent 70%, rgba(255,255,255,0.01) 70%);
+background-size: 25px 25px, 35px 35px, 100px 100px;
+pointer-events: none;
+z-index: 1;
+opacity: 0.6;
+}
+</修改前>
 .nav-link {
 position: relative;
 transition: color 0.2s ease, opacity 0.2s ease;
 }
 .nav-link:hover {
 opacity: 0.8;
+}
+/* Dark mode navigation text styles */
+.dark .nav-link {
+color: white !important;
+}
+.dark #navbar span {
+color: #c9a55c !important;
+}
+.dark #mobileMenuBtn {
+color: white !important;
+}
+/* Force white text in dark mode regardless of scroll state */
+.dark #navbar .nav-link {
+color: white !important;
+}
+.dark #navbar button {
+color: white !important;
 }
 .nav-link::after {
 content: '';
@@ -88,16 +155,32 @@ background-attachment: scroll;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
 .hero-section {
-background-position: center 20%;
-background-size: cover;
+background-position: center center;
+background-size: contain;
+background-repeat: no-repeat;
 background-attachment: scroll;
+background-color: #1a1a1a;
 }
 }
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
 .hero-section {
-background-position: center 15%;
-background-size: cover;
+background-position: center center;
+background-size: contain;
+background-repeat: no-repeat;
 background-attachment: scroll;
+background-color: #1a1a1a;
+}
+}
+/* Fix slider layout for tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+#performancesWrapper > div,
+#mediaWrapper > div,
+#galleryWrapper > div {
+gap: 1rem !important;
+}
+#performancesWrapper .w-96,
+#mediaWrapper .w-96 {
+width: 280px !important;
 }
 }
 .line-clamp-2 {
@@ -267,16 +350,17 @@ transition-delay: 0.4s;
 </button>
 </div>
 </div>
-<div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-gray-800 w-full shadow-md">
+<div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-black w-full shadow-md">
 <div class="w-full px-4 sm:px-6 py-4 flex flex-col space-y-4">
-<a href="#top" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-700 dark:text-gray-200 px-2 -mx-2 rounded transition-all duration-200">Home</a>
-<a href="#about" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-700 dark:text-gray-200 px-2 -mx-2 rounded transition-all duration-200">About</a>
-<a href="#performances" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-700 dark:text-gray-200 px-2 -mx-2 rounded transition-all duration-200">Performances</a>
-<a href="#media" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-700 dark:text-gray-200 px-2 -mx-2 rounded transition-all duration-200">Media</a>
-<a href="#gallery" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-700 dark:text-gray-200 px-2 -mx-2 rounded transition-all duration-200">Photo Gallery</a>
-<a href="#contact" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-700 dark:text-gray-200 px-2 -mx-2 rounded transition-all duration-200">Contact</a>
+<a href="#top" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-800 dark:text-white px-2 -mx-2 rounded transition-all duration-200">Home</a>
+<a href="#about" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-800 dark:text-white px-2 -mx-2 rounded transition-all duration-200">About</a>
+<a href="#performances" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-800 dark:text-white px-2 -mx-2 rounded transition-all duration-200">Performances</a>
+<a href="#media" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-800 dark:text-white px-2 -mx-2 rounded transition-all duration-200">Media</a>
+<a href="#gallery" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-800 dark:text-white px-2 -mx-2 rounded transition-all duration-200">Photo Gallery</a>
+<a href="#contact" class="block py-2 font-medium hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-800 dark:text-white px-2 -mx-2 rounded transition-all duration-200">Contact</a>
 </div>
 </div>
+</修改前>
 </nav>
 <section class="hero-section h-screen relative">
 <div class="absolute inset-0 bg-black/40"></div>
@@ -787,6 +871,7 @@ function renderPerformances() {
 const wrapper = document.getElementById('performancesWrapper');
 const slider = document.getElementById('performancesSlider');
 const isMobile = window.innerWidth < 768;
+const isTablet = window.innerWidth >= 768 && window.innerWidth <= 1024;
 if (isMobile) {
 // Mobile: horizontal scroll
 let html = '';
@@ -810,19 +895,19 @@ wrapper.style.scrollBehavior = 'smooth';
 wrapper.style.transform = 'none';
 slider.className = 'overflow-hidden w-full';
 } else {
-// Desktop: existing slider behavior
+// Desktop and Tablet: existing slider behavior
 slider.className = 'overflow-hidden w-full';
-const visibleItems = 3;
+const visibleItems = isTablet ? 2 : 3;
 const totalSets = Math.ceil(allPerformances.length / visibleItems);
 let html = '';
 for (let set = 0; set < totalSets; set++) {
 const startIndex = set * visibleItems;
 const endIndex = Math.min(startIndex + visibleItems, allPerformances.length);
 const setPerformances = allPerformances.slice(startIndex, endIndex);
-html += `<div class="w-full flex-shrink-0 flex justify-center gap-8">`;
+html += `<div class="w-full flex-shrink-0 flex justify-center ${isTablet ? 'gap-4' : 'gap-8'}">`;
 setPerformances.forEach(performance => {
 html += `
-<div class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex-shrink-0 w-96">
+<div class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex-shrink-0 ${isTablet ? 'w-80' : 'w-96'}">
 <img src="${performance.image}"
 alt="${performance.title}"
 class="w-full h-64 object-cover">
@@ -949,6 +1034,7 @@ function renderMedia() {
 const wrapper = document.getElementById('mediaWrapper');
 const slider = document.getElementById('mediaSlider');
 const isMobile = window.innerWidth < 768;
+const isTablet = window.innerWidth >= 768 && window.innerWidth <= 1024;
 if (isMobile) {
 // Mobile: horizontal scroll
 let html = '';
@@ -976,19 +1062,19 @@ wrapper.style.scrollBehavior = 'smooth';
 wrapper.style.transform = 'none';
 slider.className = 'overflow-hidden w-full';
 } else {
-// Desktop: existing slider behavior
+// Desktop and Tablet: existing slider behavior
 slider.className = 'overflow-hidden w-full';
-const visibleItems = 3;
+const visibleItems = isTablet ? 2 : 3;
 const totalSets = Math.ceil(allMediaItems.length / visibleItems);
 let html = '';
 for (let set = 0; set < totalSets; set++) {
 const startIndex = set * visibleItems;
 const endIndex = Math.min(startIndex + visibleItems, allMediaItems.length);
 const setItems = allMediaItems.slice(startIndex, endIndex);
-html += `<div class="w-full flex-shrink-0 flex justify-center gap-8">`;
+html += `<div class="w-full flex-shrink-0 flex justify-center ${isTablet ? 'gap-4' : 'gap-8'}">`;
 setItems.forEach(item => {
 html += `
-<div class="bg-white dark:bg-gray-900 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer flex-shrink-0 w-96" onclick="openVideoModal('${item.videoUrl}')">
+<div class="bg-white dark:bg-gray-900 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer flex-shrink-0 ${isTablet ? 'w-80' : 'w-96'}" onclick="openVideoModal('${item.videoUrl}')">
 <div class="relative">
 <img src="${item.image}"
 alt="${item.title}"
@@ -1240,7 +1326,7 @@ let isScrolling = false;
 function updateNavbar() {
 if (window.scrollY > 50) {
 navbar.classList.remove('bg-transparent');
-navbar.classList.add('bg-white/95', 'backdrop-blur-sm', 'shadow-sm');
+navbar.classList.add('bg-white/95', 'dark:bg-gray-900/95', 'backdrop-blur-sm', 'shadow-sm');
 // Change text colors to dark
 if (navLogo) {
 navLogo.classList.remove('text-white');
@@ -1255,7 +1341,7 @@ mobileMenuBtn.classList.remove('text-white');
 mobileMenuBtn.classList.add('text-gray-800');
 }
 } else {
-navbar.classList.remove('bg-white/95', 'backdrop-blur-sm', 'shadow-sm');
+navbar.classList.remove('bg-white/95', 'dark:bg-gray-900/95', 'backdrop-blur-sm', 'shadow-sm');
 navbar.classList.add('bg-transparent');
 // Change text colors back to white
 if (navLogo) {
