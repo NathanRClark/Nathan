@@ -1,6 +1,40 @@
 import PageMeta from '@/components/feature/PageMeta';
+import { useReveal } from '@/hooks/useReveal';
+
+function SectionHeader({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="font-heading text-lg md:text-xl text-foreground-900 font-semibold mb-5 tracking-wide">
+      {children}
+    </h2>
+  );
+}
+
+function TimelineDot() {
+  return (
+    <div className="absolute -left-[5px] top-1 w-2 h-2 rounded-full bg-accent-500" />
+  );
+}
+
+function SectionDivider() {
+  return <hr className="border-background-200/70" />;
+}
 
 export default function Resume() {
+  const summaryRef = useReveal();
+  const skillsRef = useReveal();
+  const experienceRef = useReveal();
+  const awardsRef = useReveal();
+  const educationRef = useReveal();
+
+  // Individual timeline item reveals
+  const exp1Ref = useReveal({ threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  const exp2Ref = useReveal({ threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  const exp3Ref = useReveal({ threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  const exp4Ref = useReveal({ threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  const exp5Ref = useReveal({ threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  const exp6Ref = useReveal({ threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  const exp7Ref = useReveal({ threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+
   return (
     <div className="bg-background-50">
       <PageMeta
@@ -9,22 +43,23 @@ export default function Resume() {
         canonical="/resume"
       />
 
-      <section className="py-14 md:py-20 px-4 md:px-6">
+      <section className="pt-20 md:pt-28 pb-14 md:pb-20 px-4 md:px-6">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12 md:mb-16">
+          {/* Header — above the fold, pure CSS animation */}
+          <div className="text-center mb-12 md:mb-16 animate-fade-up">
             <h1 className="font-heading text-4xl md:text-5xl text-foreground-950 font-semibold">
               Nathan Clark
             </h1>
-            <p className="mt-2 text-foreground-500 text-sm">Tenor &amp; Classical Vocalist &mdash; Waco, Texas</p>
-            <div className="mt-4 w-16 h-0.5 bg-accent-500 mx-auto rounded-full" />
+            <p className="mt-2 text-foreground-500 text-sm animate-fade-in delay-200">
+              Tenor &amp; Classical Vocalist &mdash; Waco, Texas
+            </p>
+            <div className="mt-4 w-16 h-0.5 bg-accent-500 mx-auto rounded-full animate-fade-in delay-300" />
           </div>
 
           <div className="space-y-14">
-            {/* SUMMARY */}
-            <section>
-              <h2 className="font-heading text-lg md:text-xl text-foreground-900 font-semibold mb-4 tracking-wide">
-                SUMMARY
-              </h2>
+            {/* ── SUMMARY ── */}
+            <section ref={summaryRef} className="reveal">
+              <SectionHeader>SUMMARY</SectionHeader>
               <p className="text-foreground-700 leading-relaxed text-sm md:text-base">
                 Gifted Texas tenor and dedicated undergraduate student. Dedicated classical vocalist
                 willing to collaborate with other professionals or perform in solo roles.
@@ -32,13 +67,11 @@ export default function Resume() {
               </p>
             </section>
 
-            <hr className="border-background-200/70" />
+            <SectionDivider />
 
-            {/* KEY SKILLS */}
-            <section>
-              <h2 className="font-heading text-lg md:text-xl text-foreground-900 font-semibold mb-5 tracking-wide">
-                KEY SKILLS
-              </h2>
+            {/* ── KEY SKILLS ── */}
+            <section ref={skillsRef} className="reveal">
+              <SectionHeader>KEY SKILLS</SectionHeader>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2.5">
                 {[
                   'Collaboration',
@@ -61,18 +94,16 @@ export default function Resume() {
               </div>
             </section>
 
-            <hr className="border-background-200/70" />
+            <SectionDivider />
 
-            {/* EXPERIENCE */}
-            <section>
-              <h2 className="font-heading text-lg md:text-xl text-foreground-900 font-semibold mb-6 tracking-wide">
-                EXPERIENCE
-              </h2>
+            {/* ── EXPERIENCE ── */}
+            <section ref={experienceRef} className="reveal">
+              <SectionHeader>EXPERIENCE</SectionHeader>
 
               <div className="space-y-10">
                 {/* Baylor */}
-                <div className="relative pl-5 sm:pl-6 border-l-2 border-accent-200">
-                  <div className="absolute -left-[5px] top-1 w-2 h-2 rounded-full bg-accent-500" />
+                <div ref={exp1Ref} className="reveal relative pl-5 sm:pl-6 border-l-2 border-accent-200">
+                  <TimelineDot />
                   <h3 className="font-heading text-sm sm:text-base text-foreground-900 font-semibold">
                     Vocal Performance Major
                   </h3>
@@ -93,7 +124,7 @@ export default function Resume() {
                       <span className="w-1.5 h-1.5 rounded-full bg-foreground-400 mt-2 flex-shrink-0" />
                       <div className="leading-snug">
                         <div>
-                          Performed in Baylor Opera's{' '}
+                          Performed in Baylor Opera&rsquo;s{' '}
                           <em className="font-medium text-foreground-800 not-italic">Notes on Viardot</em>
                         </div>
                         <div className="text-foreground-500 mt-0.5">
@@ -105,8 +136,8 @@ export default function Resume() {
                       <span className="w-1.5 h-1.5 rounded-full bg-foreground-400 mt-2 flex-shrink-0" />
                       <div className="leading-snug">
                         <div>
-                          Performed in Baylor Opera's{' '}
-                          <em className="font-medium text-foreground-800 not-italic">L'Orfeo</em>
+                          Performed in Baylor Opera&rsquo;s{' '}
+                          <em className="font-medium text-foreground-800 not-italic">L&rsquo;Orfeo</em>
                         </div>
                         <div className="text-foreground-500 mt-0.5">
                           as ensemble member and part of the Pastori
@@ -124,10 +155,10 @@ export default function Resume() {
                 </div>
 
                 {/* Gilbert & Sullivan */}
-                <div className="relative pl-5 sm:pl-6 border-l-2 border-accent-200">
-                  <div className="absolute -left-[5px] top-1 w-2 h-2 rounded-full bg-accent-500" />
+                <div ref={exp2Ref} className="reveal relative pl-5 sm:pl-6 border-l-2 border-accent-200">
+                  <TimelineDot />
                   <h3 className="font-heading text-sm sm:text-base text-foreground-900 font-semibold">
-                    Houston Gilbert &amp; Sullivan Society — <em>The Gondoliers</em>
+                    Houston Gilbert &amp; Sullivan Society &mdash; <em>The Gondoliers</em>
                   </h3>
                   <p className="text-xs sm:text-sm text-foreground-600">
                     Houston, Texas &mdash; July 2026
@@ -141,8 +172,8 @@ export default function Resume() {
                 </div>
 
                 {/* St Louis */}
-                <div className="relative pl-5 sm:pl-6 border-l-2 border-accent-200">
-                  <div className="absolute -left-[5px] top-1 w-2 h-2 rounded-full bg-accent-500" />
+                <div ref={exp3Ref} className="reveal relative pl-5 sm:pl-6 border-l-2 border-accent-200">
+                  <TimelineDot />
                   <h3 className="font-heading text-sm sm:text-base text-foreground-900 font-semibold">
                     Choral Tenor &amp; Cantor
                   </h3>
@@ -159,8 +190,8 @@ export default function Resume() {
                 </div>
 
                 {/* St Peter */}
-                <div className="relative pl-5 sm:pl-6 border-l-2 border-accent-200">
-                  <div className="absolute -left-[5px] top-1 w-2 h-2 rounded-full bg-accent-500" />
+                <div ref={exp4Ref} className="reveal relative pl-5 sm:pl-6 border-l-2 border-accent-200">
+                  <TimelineDot />
                   <h3 className="font-heading text-sm sm:text-base text-foreground-900 font-semibold">
                     Choral Tenor &amp; Section Leader
                   </h3>
@@ -177,8 +208,8 @@ export default function Resume() {
                 </div>
 
                 {/* HGO */}
-                <div className="relative pl-5 sm:pl-6 border-l-2 border-accent-200">
-                  <div className="absolute -left-[5px] top-1 w-2 h-2 rounded-full bg-accent-500" />
+                <div ref={exp5Ref} className="reveal relative pl-5 sm:pl-6 border-l-2 border-accent-200">
+                  <TimelineDot />
                   <h3 className="font-heading text-sm sm:text-base text-foreground-900 font-semibold">
                     Member of Bauer Family HS Voice Studio
                   </h3>
@@ -200,8 +231,8 @@ export default function Resume() {
                 </div>
 
                 {/* St Paul UMC */}
-                <div className="relative pl-5 sm:pl-6 border-l-2 border-accent-200">
-                  <div className="absolute -left-[5px] top-1 w-2 h-2 rounded-full bg-accent-500" />
+                <div ref={exp6Ref} className="reveal relative pl-5 sm:pl-6 border-l-2 border-accent-200">
+                  <TimelineDot />
                   <h3 className="font-heading text-sm sm:text-base text-foreground-900 font-semibold">
                     Choral Singer
                   </h3>
@@ -218,8 +249,8 @@ export default function Resume() {
                 </div>
 
                 {/* TMEA */}
-                <div className="relative pl-5 sm:pl-6 border-l-2 border-accent-200">
-                  <div className="absolute -left-[5px] top-1 w-2 h-2 rounded-full bg-accent-500" />
+                <div ref={exp7Ref} className="reveal relative pl-5 sm:pl-6 border-l-2 border-accent-200">
+                  <TimelineDot />
                   <h3 className="font-heading text-sm sm:text-base text-foreground-900 font-semibold">
                     TMEA All-State Member
                   </h3>
@@ -237,13 +268,11 @@ export default function Resume() {
               </div>
             </section>
 
-            <hr className="border-background-200/70" />
+            <SectionDivider />
 
-            {/* AWARDS */}
-            <section>
-              <h2 className="font-heading text-lg md:text-xl text-foreground-900 font-semibold mb-5 tracking-wide">
-                AWARDS
-              </h2>
+            {/* ── AWARDS ── */}
+            <section ref={awardsRef} className="reveal">
+              <SectionHeader>AWARDS</SectionHeader>
               <ul className="space-y-3">
                 <li className="text-sm text-foreground-700 flex items-start gap-2.5">
                   <span className="w-1 h-1 rounded-full bg-accent-500 mt-1.5 flex-shrink-0" />
@@ -262,28 +291,26 @@ export default function Resume() {
               </ul>
             </section>
 
-            <hr className="border-background-200/70" />
+            <SectionDivider />
 
-            {/* EDUCATION */}
-            <section>
-              <h2 className="font-heading text-lg md:text-xl text-foreground-900 font-semibold mb-5 tracking-wide">
-                EDUCATION
-              </h2>
+            {/* ── EDUCATION ── */}
+            <section ref={educationRef} className="reveal">
+              <SectionHeader>EDUCATION</SectionHeader>
 
               <div className="space-y-6">
                 <div className="relative pl-6 border-l-2 border-accent-200">
-                  <div className="absolute -left-[5px] top-1 w-2 h-2 rounded-full bg-accent-500" />
+                  <TimelineDot />
                   <h3 className="font-heading text-base text-foreground-900 font-semibold">
                     Baylor University
                   </h3>
-                  <p className="text-sm text-foreground-600">Waco, Texas — Current Student</p>
+                  <p className="text-sm text-foreground-600">Waco, Texas &mdash; Current Student</p>
                   <p className="text-sm text-foreground-700 mt-1">
                     Dean&apos;s List (all semesters)
                   </p>
                 </div>
 
                 <div className="relative pl-6 border-l-2 border-accent-200">
-                  <div className="absolute -left-[5px] top-1 w-2 h-2 rounded-full bg-accent-500" />
+                  <TimelineDot />
                   <h3 className="font-heading text-base text-foreground-900 font-semibold">
                     Clear Creek High School
                   </h3>
