@@ -61,21 +61,33 @@ const galleryImages = [
 
 function GalleryImage({ image, index, onClick }: { image: typeof galleryImages[0]; index: number; onClick: () => void }) {
   const ref = useRef<HTMLDivElement>(null);
+  const revealedRef = useRef(false);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || revealedRef.current) return;
+
+    // Check immediately — handles both Strict Mode double-mount and already-in-viewport elements
+    const rect = el.getBoundingClientRect();
+    const isInView = rect.top < window.innerHeight + 40 && rect.bottom > 0;
+
+    if (isInView) {
+      el.classList.add('visible');
+      revealedRef.current = true;
+      return;
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && !revealedRef.current) {
             entry.target.classList.add('visible');
+            revealedRef.current = true;
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px 40px 0px' }
+      { threshold: 0.08, rootMargin: '0px 0px 40px 0px' }
     );
 
     observer.observe(el);
@@ -86,7 +98,7 @@ function GalleryImage({ image, index, onClick }: { image: typeof galleryImages[0
     <div
       ref={ref}
       className="break-inside-avoid rounded-lg overflow-hidden border border-background-200/70 hover:border-accent-300/50 transition-all duration-300 cursor-pointer group reveal"
-      style={{ animationDelay: `${(index % 3) * 0.1}s` }}
+      style={{ animationDelay: `${(index % 3) * 0.08}s` }}
       onClick={onClick}
     >
       <img
@@ -102,6 +114,8 @@ function GalleryImage({ image, index, onClick }: { image: typeof galleryImages[0
 
 export default function Gallery() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
+  const touchStartX = useRef<number | null>(null);
 
   const goNext = useCallback(() => {
     setLightboxIndex((prev) => {
@@ -117,16 +131,20 @@ export default function Gallery() {
     });
   }, []);
 
+  const closeLightbox = useCallback(() => {
+    setLightboxIndex(null);
+  }, []);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (lightboxIndex === null) return;
       if (e.key === 'ArrowRight') goNext();
       if (e.key === 'ArrowLeft') goPrev();
-      if (e.key === 'Escape') setLightboxIndex(null);
+      if (e.key === 'Escape') closeLightbox();
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [lightboxIndex, goNext, goPrev]);
+  }, [lightboxIndex, goNext, goPrev, closeLightbox]);
 
   useEffect(() => {
     if (lightboxIndex !== null) {
@@ -139,6 +157,36 @@ export default function Gallery() {
     };
   }, [lightboxIndex]);
 
+  // Swipe-down handler for mobile
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStartY.current = e.touches[0].clientY;
+    touchStartX.current = e.touches[0].clientX;
+  }, []);
+
+  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
+    if (touchStartY.current === null || touchStartX.current === null) return;
+    const deltaY = e.changedTouches[0].clientY - touchStartY.current;
+    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+    const absDeltaX = Math.abs(deltaX);
+    const absDeltaY = Math.abs(deltaY);
+
+    // Swipe down → close (only if primarily vertical)
+    if (deltaY > 80 && absDeltaY > absDeltaX) {
+      closeLightbox();
+    }
+    // Swipe left → next
+    else if (deltaX < -60 && absDeltaX > absDeltaY) {
+      goNext();
+    }
+    // Swipe right → previous
+    else if (deltaX > 60 && absDeltaX > absDeltaY) {
+      goPrev();
+    }
+
+    touchStartY.current = null;
+    touchStartX.current = null;
+  }, [closeLightbox, goNext, goPrev]);
+
   return (
     <div className="bg-background-50">
       <PageMeta
@@ -147,17 +195,18 @@ export default function Gallery() {
         canonical="/gallery"
       />
 
-      <section className="py-14 md:py-20 px-4 md:px-6">
+      <section className="pt-20 md:pt-28 pb-14 md:pb-20 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
+          {/* Header — staggered CSS animations */}
           <div className="text-center mb-12 md:mb-16">
-            <p className="text-accent-600 font-label text-xs tracking-[0.22em] uppercase mb-3">
+            <p className="text-accent-600 font-label text-xs tracking-[0.22em] uppercase mb-3 animate-fade-up">
               Moments
             </p>
-            <h1 className="font-heading text-3xl md:text-5xl text-foreground-950 font-semibold">
+            <h1 className="font-heading text-3xl md:text-5xl text-foreground-950 font-semibold animate-fade-up delay-100">
               Gallery
             </h1>
-            <div className="mt-4 w-16 h-0.5 bg-accent-500 mx-auto rounded-full" />
-            <p className="mt-5 text-foreground-600 text-sm md:text-base max-w-2xl mx-auto">
+            <div className="mt-4 w-16 h-0.5 bg-accent-500 mx-auto rounded-full animate-fade-in delay-200" />
+            <p className="mt-5 text-foreground-600 text-sm md:text-base max-w-2xl mx-auto animate-fade-up delay-150">
               Moments from the stage, studio, and beyond — Nathan Clark&rsquo;s journey as a Texas tenor and classical vocalist at Baylor University.
             </p>
           </div>
@@ -177,20 +226,24 @@ export default function Gallery() {
 
       {lightboxIndex !== null && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 md:p-8"
-          onClick={() => setLightboxIndex(null)}
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 md:p-8 touch-none"
+          onClick={closeLightbox}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
+          {/* Close button — large & prominent on mobile */}
           <button
             onClick={(e) => {
               e.stopPropagation();
-              setLightboxIndex(null);
+              closeLightbox();
             }}
-            className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer z-10"
+            className="absolute top-4 right-4 w-11 h-11 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/30 text-white transition-colors cursor-pointer z-20"
             aria-label="Close lightbox"
           >
-            <i className="ri-close-line text-xl" />
+            <i className="ri-close-line text-2xl" />
           </button>
 
+          {/* Previous */}
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -202,6 +255,7 @@ export default function Gallery() {
             <i className="ri-arrow-left-line text-xl" />
           </button>
 
+          {/* Next */}
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -213,19 +267,36 @@ export default function Gallery() {
             <i className="ri-arrow-right-line text-xl" />
           </button>
 
+          {/* Image container — stopPropagation so tapping image doesn't close (nav arrows still work) */}
           <div
-            className="max-w-5xl max-h-[85vh] w-full h-full"
+            className="max-w-5xl max-h-[80vh] w-full h-full"
             onClick={(e) => e.stopPropagation()}
           >
             <img
               src={galleryImages[lightboxIndex].src}
               alt={galleryImages[lightboxIndex].alt}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain select-none"
+              draggable={false}
             />
           </div>
 
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/70 text-sm">
-            {lightboxIndex + 1} / {galleryImages.length}
+          {/* Bottom bar: counter + close hint on mobile */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20">
+            <span className="text-white/70 text-sm">
+              {lightboxIndex + 1} / {galleryImages.length}
+            </span>
+            <span className="text-white/40 text-xs md:hidden">
+              Swipe down to close
+            </span>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                closeLightbox();
+              }}
+              className="md:hidden px-5 py-2 bg-white/15 hover:bg-white/30 text-white text-sm font-medium rounded-full transition-colors cursor-pointer whitespace-nowrap"
+            >
+              Close
+            </button>
           </div>
         </div>
       )}
