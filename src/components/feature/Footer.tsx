@@ -50,6 +50,15 @@ export default function Footer() {
             <p className="text-xs text-background-400">
               Texas-based tenor &mdash; Available for performances in Waco, Houston, and across Texas
             </p>
+            <span className="hidden sm:inline text-background-50/20">|</span>
+            <a
+              href="https://clarkwebdesign.com"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="text-xs text-accent-400 hover:text-accent-300 transition-colors whitespace-nowrap"
+            >
+              Developed by ClarkWebDesign.com
+            </a>
           </div>
           <div className="flex items-center gap-4">
             <Link
