@@ -58,11 +58,12 @@ export default function About() {
             <div ref={col1Ref} className="reveal w-full lg:w-[45%] flex-shrink-0">
               <div className="rounded-lg overflow-hidden border border-background-200/70">
                 <img
-                  src="https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/397833758708dbe6b0522b6b3e2d0462.jpeg"
+                  src="https://storage.readdy-site.link/project_files/67959995-f691-4285-a751-b7b6ce6b061a/d95b47a4-ce75-45f9-bf00-5014b69d821e_compressed_A7403629.webp"
                   alt="Nathan Clark classical tenor and vocal performance student at Baylor University in Waco Texas"
                   title="Nathan Clark — Classical Tenor & Vocalist"
                   className="w-full h-auto object-cover object-top"
-                  loading="lazy"
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
             </div>
