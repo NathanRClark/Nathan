@@ -34,7 +34,6 @@ const mediaVideos = [
   },
 ];
 
-// Split into rows of 3; last row gets centred if < 3 items
 const COLS = 3;
 function chunkVideos<T>(arr: T[], size: number): T[][] {
   const result: T[][] = [];
@@ -66,10 +65,13 @@ interface VideoCardProps {
   thumbnail: string;
   onClick: () => void;
   delay?: number;
+  eager?: boolean;
 }
 
-function VideoCard({ title, thumbnail, onClick, delay = 0 }: VideoCardProps) {
+function VideoCard({ title, thumbnail, onClick, delay = 0, eager = false }: VideoCardProps) {
   const ref = useReveal();
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <div
       ref={ref}
@@ -80,13 +82,20 @@ function VideoCard({ title, thumbnail, onClick, delay = 0 }: VideoCardProps) {
         className="group bg-background-50 rounded-lg overflow-hidden border border-background-200/70 hover:border-accent-300/50 transition-all duration-300 cursor-pointer"
         onClick={onClick}
       >
-        <div className="relative aspect-video overflow-hidden">
+        <div className="relative aspect-video overflow-hidden bg-background-200/50">
+          {!loaded && (
+            <div className="absolute inset-0 animate-pulse bg-background-200/60" />
+          )}
           <img
             src={thumbnail}
             alt={`Nathan Clark tenor performing ${title}`}
             title={title}
-            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
+            className={`w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-105 ${
+              loaded ? 'opacity-100' : 'opacity-0'
+            }`}
+            loading={eager ? 'eager' : 'lazy'}
+            decoding="async"
+            onLoad={() => setLoaded(true)}
           />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-all duration-300 flex items-center justify-center">
             <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-accent-500/90 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
@@ -154,6 +163,7 @@ export default function Media() {
                     thumbnail={video.thumbnail}
                     onClick={() => setActiveVideo(video.videoUrl)}
                     delay={(colIdx) * 100}
+                    eager={rowIdx * COLS + colIdx < 3}
                   />
                 ))}
               </div>
