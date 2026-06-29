@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import PageMeta from '@/components/feature/PageMeta';
 import EventsJsonLd from '@/components/feature/EventsJsonLd';
 import type { EventData } from '@/components/feature/EventsJsonLd';
+import { useReveal } from '@/hooks/useReveal';
 
 interface Performance {
   image: string;
@@ -14,7 +16,7 @@ interface Performance {
 const performances: Performance[] = [
   {
     image:
-      'https://storage.readdy-site.link/project_files/67959995-f691-4285-a751-b7b6ce6b061a/de0492a9-92fd-451d-989e-e0b1d8672d77_ED3BAD18-3D3A-4300-9EF4-8F63D33506FE.jpeg',
+      'https://storage.readdy-site.link/project_files/67959995-f691-4285-a751-b7b6ce6b061a/db090e7e-d3cd-4d9e-8720-569a7c97a3d5_compressed_Lorfeo-image.webp',
     title: "L'Orfeo",
     date: '2026-04',
     venue: 'Roxy Grove Hall, Baylor University, Waco, Texas',
@@ -22,42 +24,42 @@ const performances: Performance[] = [
   },
   {
     image:
-      'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/269d617f079d230d4f411c7a2d1d10a7.jpeg',
+      'https://storage.readdy-site.link/project_files/67959995-f691-4285-a751-b7b6ce6b061a/1b38ef52-f1fd-4e63-a464-935077afa49c_compressed_notes-image.webp',
     title: 'Notes on Viardot Opera',
     date: '2024-11-07',
     venue: 'Jones Theatre, Baylor University, Waco, Texas',
   },
   {
     image:
-      'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/13b71d7dba9f0d0dfbde09cb0ad1e4bf.jpeg',
+      'https://storage.readdy-site.link/project_files/67959995-f691-4285-a751-b7b6ce6b061a/d010e22f-9c6c-478e-98b6-7714777db798_compressed_earth-sym-image.webp',
     title: 'Earth Symphony at National ACDA',
     date: '2024-03-22',
     venue: 'Meyerson Concert Hall, Dallas, Texas',
   },
   {
     image:
-      'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/4da89f4d41e0d5c9c5ca4c2b4d834327.jpeg',
+      'https://storage.readdy-site.link/project_files/67959995-f691-4285-a751-b7b6ce6b061a/91735fae-6c8d-4c56-b2d2-2ba6c1de906f_compressed_good-fri-image.webp',
     title: 'Good Friday Passion Narrative of St. John Cantor',
     date: '2024-04-18',
     venue: "St. Peter's Catholic Student Center, Waco, Texas",
   },
   {
     image:
-      'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/26607961b38f84f0878643ea24ae2a33.jpeg',
+      'https://storage.readdy-site.link/project_files/67959995-f691-4285-a751-b7b6ce6b061a/21b07979-12b2-4a39-9ad9-6d99ee65082f_compressed_armonia-image.webp',
     title: 'Armonía Christmas Concert',
     date: '2024-12-21',
     venue: "St. Paul's Methodist Church, Houston, Texas",
   },
   {
     image:
-      'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/cc22d16473b6b8b38904d6a6bcf6ba27.jpeg',
+      'https://storage.readdy-site.link/project_files/67959995-f691-4285-a751-b7b6ce6b061a/67facba1-db17-456d-abda-740c98a3df11_compressed_a-baylor-christ-image.webp',
     title: 'A Baylor Christmas',
     date: '2024-12',
     venue: 'Jones Concert Hall, Baylor University, Waco, Texas',
   },
   {
     image:
-      'https://static.readdy.ai/image/353737c481bf505afea377ed11fab8ca/e4c2a131d5f9facc9246b45e8dbf26e9.jpeg',
+      'https://storage.readdy-site.link/project_files/67959995-f691-4285-a751-b7b6ce6b061a/6ae75a7c-2564-4d3d-abcc-b60d6a951471_compressed_stpaul-image.webp',
     title: 'St. Paul Choral Scholars Concert',
     date: '2024-07-16',
     venue: "St. Stephen's Cathedral, Vienna, Austria",
@@ -82,7 +84,44 @@ function displayDate(date: string) {
   return date;
 }
 
+function PerformanceImage({ item, eager }: { item: Performance; eager: boolean }) {
+  const [loaded, setLoaded] = useState(false);
+
+  if (!item.image) {
+    return (
+      <div className="aspect-[4/3] bg-background-100 flex flex-col items-center justify-center gap-3">
+        <div className="w-14 h-14 flex items-center justify-center rounded-full bg-accent-100">
+          <i className="ri-music-2-line text-2xl text-accent-600" />
+        </div>
+        <span className="text-xs text-foreground-400 tracking-wide uppercase">Photo Coming Soon</span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="aspect-[4/3] overflow-hidden bg-background-100 relative">
+      {!loaded && (
+        <div className="absolute inset-0 animate-pulse bg-background-200/60" />
+      )}
+      <img
+        src={item.image}
+        alt={`Nathan Clark tenor performing in ${item.title} at ${item.venue}`}
+        title={item.title}
+        className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${
+          loaded ? 'opacity-100' : 'opacity-0'
+        }`}
+        style={item.imagePosition ? { objectPosition: item.imagePosition } : { objectPosition: 'top' }}
+        loading={eager ? 'eager' : 'lazy'}
+        decoding="async"
+        onLoad={() => setLoaded(true)}
+      />
+    </div>
+  );
+}
+
 export default function Performances() {
+  const headerRef = useReveal();
+
   return (
     <div className="bg-background-50">
       <PageMeta
@@ -92,9 +131,9 @@ export default function Performances() {
       />
       <EventsJsonLd events={eventData} />
 
-      <section className="py-14 md:py-20 px-4 md:px-6">
+      <section className="pt-20 md:pt-28 pb-14 md:pb-20 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 md:mb-16">
+          <div ref={headerRef} className="reveal text-center mb-12 md:mb-16">
             <p className="text-accent-600 font-label text-xs tracking-[0.22em] uppercase mb-3">
               Past &amp; Recent
             </p>
@@ -113,25 +152,7 @@ export default function Performances() {
                 key={index}
                 className="group bg-background-50 rounded-lg overflow-hidden border border-background-200/70 hover:border-accent-300/50 transition-all duration-300"
               >
-                {item.image ? (
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img
-                      src={item.image}
-                      alt={`Nathan Clark tenor performing in ${item.title} at ${item.venue}`}
-                      title={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      style={item.imagePosition ? { objectPosition: item.imagePosition } : { objectPosition: 'top' }}
-                      loading="lazy"
-                    />
-                  </div>
-                ) : (
-                  <div className="aspect-[4/3] bg-background-100 flex flex-col items-center justify-center gap-3">
-                    <div className="w-14 h-14 flex items-center justify-center rounded-full bg-accent-100">
-                      <i className="ri-music-2-line text-2xl text-accent-600" />
-                    </div>
-                    <span className="text-xs text-foreground-400 tracking-wide uppercase">Photo Coming Soon</span>
-                  </div>
-                )}
+                <PerformanceImage item={item} eager={index < 3} />
                 <div className="p-4 md:p-5">
                   <h2 className="font-heading text-base md:text-lg text-foreground-900 font-medium leading-snug">
                     {item.title}
